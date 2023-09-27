@@ -1,6 +1,5 @@
 set fish_greeting
 set PAGER
-set SHELL fish
 set EDITOR nvim
 
 function __history_previous_command
@@ -37,8 +36,8 @@ end
 function copy
     set count (count $argv | tr -d \n)
     if test "$count" = 2; and test -d "$argv[1]"
-	set from (echo $argv[1] | trim-right /)
-	set to (echo $argv[2])
+        set from (echo $argv[1] | trim-right /)
+        set to (echo $argv[2])
         command cp -r $from $to
     else
         command cp $argv
@@ -74,11 +73,10 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
-alias ls='exa -al --color=always --group-directories-first'
-alias la='exa -a --color=always --group-directories-first'
-alias ll='exa -l --color=always --group-directories-first'
+alias ls='exa -a --color=always --group-directories-first'
+alias ll='exa -al --color=always --group-directories-first'
 alias lt='exa -aT --color=always --group-directories-first'
-alias l.='exa -a | egrep "^\."'
+alias ldot='exa -a | grep -E "^\."'
 
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -100,11 +98,3 @@ alias vi='nvim'
 alias vim='nvim'
 alias oldvim='\vim'
 alias vimdiff='nvim -d'
-
-alias k='kubectl'
-
-if test (uname) = "Darwin"
-    ulimit -Sn 2048
-end
-
-starship init fish | source
