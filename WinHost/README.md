@@ -2,14 +2,14 @@
 
 
 #### Install these programs manually, if needed
-- Firefox: https://www.mozilla.org/en-US/firefox/new/
-- WhatsApp: https://www.whatsapp.com/download
-- VirtualBox: https://www.virtualbox.org/wiki/Downloads
-- Lightshot: https://app.prntscr.com/en/index.html
+- [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+- [WhatsApp](https://www.whatsapp.com/download)
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+- [Lightshot](https://app.prntscr.com/en/index.html)
 
-- Google Drive: https://www.google.com/drive/download/
-- Discord: https://discord.com/download
-- Steam: https://store.steampowered.com/about/
+- [Google Drive](https://www.google.com/drive/download/)
+- [Discord](https://discord.com/download)
+- [Steam](https://store.steampowered.com/about/)
 
 
 #### Run these lines in PowerShell
@@ -27,6 +27,7 @@ Copy-Item -Path .\WinHost\Home\* -Destination $HOME -Recurse -Force
 codium --install-extension jeanp413.open-remote-ssh
 ```
 Now close all PowerShell windows.
+
 
 #### Stuff to do next
 - Think which font you want in VSCodium and which one in WezTerm.  
