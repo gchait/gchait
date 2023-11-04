@@ -19,5 +19,6 @@
         "redhat.vscode-yaml",
         "fwcd.kotlin",
         "kokakiwi.vscode-just"
-     ]    
+    ],
+    "files.eol": "\n"
 }
