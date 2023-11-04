@@ -9,12 +9,14 @@
   - [Discord](https://discord.com/download)
   - [Steam](https://store.steampowered.com/about/)
 
-- Run these lines in PowerShell, one by one:
+- Run these commands in PowerShell, one by one:
   ```
   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
   iwr -useb get.scoop.sh | iex
   
   scoop install git
+  git config --global core.autocrlf false
+  
   git clone https://github.com/gchait/gchait.git
   cd .\gchait
   
