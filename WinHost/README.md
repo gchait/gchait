@@ -23,8 +23,6 @@ cd .\gchait
 
 Copy-Item -Path .\WinHost\Home\* -Destination $HOME -Recurse -Force
 .\WinHost\scoop-pkgs.ps1
-
-codium --install-extension jeanp413.open-remote-ssh
 ```
 Now close all PowerShell windows.
 
