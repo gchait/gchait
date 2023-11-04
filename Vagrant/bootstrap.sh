@@ -22,7 +22,7 @@ dnf install --setopt=install_weak_deps=false -y \
     tree sl vim neovim make ripgrep dnf-plugins-core util-linux-user \
     python3-setuptools python3-pip cmatrix neofetch wget awscli2 \
     zip gzip tar jq cloud-utils fish git lolcat python3-wheel exa \
-    ca-certificates gnupg gcc curl dnsutils python3-netaddr npm
+    ca-certificates gnupg gcc curl dnsutils python3-netaddr npm htop
 
 # Docker
 dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
