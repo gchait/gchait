@@ -23,7 +23,6 @@
   
   .\WinHost\scoop-pkgs.ps1
   ```
-  Now close all PowerShell windows.
 
 - Install the fonts from [here](../Fonts).
 
