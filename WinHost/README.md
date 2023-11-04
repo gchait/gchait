@@ -19,6 +19,8 @@
   cd .\gchait
   
   Copy-Item -Path .\WinHost\Home\* -Destination $HOME -Recurse -Force
+  Copy-Item -Path .\WinHost\settings.json -Destination $HOME\scoop\apps\vscodium\current\data\user-data\User -Force
+  
   .\WinHost\scoop-pkgs.ps1
   ```
   Now close all PowerShell windows.
