@@ -9,6 +9,10 @@ v up
 mkdir $HOME\.ssh -Force
 v ssh-config | out-file $HOME\.ssh\config -encoding utf8
 ```
+Now open VSCodium and use Remote Explorer to open `default` at `~/Projects`.
+
+
+
 
 
 #### Q&A
