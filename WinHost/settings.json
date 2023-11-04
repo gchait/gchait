@@ -7,5 +7,17 @@
     "workbench.productIconTheme": "material-product-icons",
     "workbench.iconTheme": "catppuccin-macchiato",
     "workbench.colorTheme": "Gnome Dark (GitHub)",
-    "editor.fontLigatures": true
+    "editor.fontLigatures": true,
+    "remote.SSH.defaultExtensions": [
+        "eamodio.gitlens",
+        "ecmel.vscode-html-css",
+        "esbenp.prettier-vscode",
+        "hashicorp.terraform",
+        "ms-azuretools.vscode-docker",
+        "ms-pyright.pyright",
+        "ms-python.python",
+        "redhat.vscode-yaml",
+        "fwcd.kotlin",
+        "kokakiwi.vscode-just"
+     ]    
 }
