@@ -9,6 +9,7 @@ end
 config.default_prog = { "ssh", "default" }
 config.window_decorations = "RESIZE"
 config.color_scheme = "Molokai (Gogh)"
+config.font = wezterm.font "Hack Nerd Font Mono"
 
 wezterm.on("gui-startup", function(cmd)
   local tab, pane, window = mux.spawn_window {
