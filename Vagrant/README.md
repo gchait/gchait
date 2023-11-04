@@ -5,7 +5,8 @@
 - Q: Why PC and not Mac?  
   A: I don't like the Ctrl, Super and Alt alternative keys in Mac.  
   Yes, they can be re-mapped, but the experience is not consistent across programs.  
-  Also, for my container-centric needs, I require my "backend" machine to be Linux anyway. Projects like `colima` are not perfect either.
+  Also, for my container-centric needs, I require my "backend" machine to be Linux anyway.  
+  Projects like `colima` are not perfect either.
 
 - Q: Why Windows and not Linux?  
   A: Gaming on Linux is not nearly as common and supported as I'd like it to be.  
@@ -24,8 +25,7 @@
 
 - Q: Why not WSL?  
   A: I used it a lot, but unfortunately it still doesn't support a `mirrored` or a proper networking mode
-  that handles split-tunnel VPNs correctly, which I currently require.  
-  Yes, projects like `wsl-vpnkit` do work, but I don't like the idea of having multiple VMs.  
+  that handles split-tunnel VPNs correctly, which I currently require. Yes, projects like `wsl-vpnkit` do work, but I don't like the idea of having multiple VMs.  
   Also, using WSL forces me into some kind of Microsoft ecosystem.  
   It is a VM, but also different enough from traditional ones to matter. WSL is using an old kernel too.
 
