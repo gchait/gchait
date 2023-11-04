@@ -8,6 +8,7 @@ end
 
 config.default_prog = { "ssh", "default" }
 config.window_decorations = "RESIZE"
+config.window_close_confirmation = "NeverPrompt"
 config.color_scheme = "Molokai (Gogh)"
 config.font = wezterm.font "Hack Nerd Font Mono"
 
