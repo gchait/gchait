@@ -1,0 +1,10 @@
+{
+    "window.zoomLevel": 1,
+    "files.autoSave": "onFocusChange",
+    "editor.fontFamily": "Hack Nerd Font",
+    "workbench.startupEditor": "none",
+    "explorer.confirmDelete": false,
+    "workbench.productIconTheme": "material-product-icons",
+    "workbench.iconTheme": "catppuccin-macchiato",
+    "workbench.colorTheme": "Gnome Dark (GitHub)"
+}
