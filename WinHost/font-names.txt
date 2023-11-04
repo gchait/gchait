@@ -1,6 +1,4 @@
-VictorMono NF
 NotoMono NF
-MesloLGL Nerd Font
 Hack Nerd Font
 FiraMono Nerd Font
 DejaVuSansM Nerd Font
