@@ -26,6 +26,11 @@
     ```
   - Open a browser at http://localhost:8080.
 
+- Save a new GitHub SSH key [here](https://github.com/settings/keys):
+  ```
+  cat ~/.ssh/id_rsa.pub
+  ```
+
 
 #### Q&A
 ##### Why PC and not Mac?  
