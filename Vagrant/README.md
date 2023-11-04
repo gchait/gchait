@@ -24,8 +24,8 @@ Not my cup of tea, corporate, GUI and all that. I much prefer a pure-Linux, prog
 Also, for programming, I want to interact only with Linux anyway, so the best VM setup wins.
 
 ##### Why not WSL?  
-I used it a lot, but unfortunately it still doesn't support a `mirrored` or a proper networking mode
-that handles split-tunnel VPNs correctly, which I currently require. Yes, projects like `wsl-vpnkit` do work, but I don't like the idea of having multiple VMs.  
+I used it a lot, but unfortunately it still doesn't support a `mirrored` or a proper networking mode that handles split-tunnel VPNs correctly.  
+Yes, projects like `wsl-vpnkit` do work, but I don't like the idea of having multiple VMs.  
 Also, using WSL forces me into some kind of Microsoft ecosystem.  
 It is a VM, but also different enough from traditional ones to matter. WSL is using an old kernel too.
 
