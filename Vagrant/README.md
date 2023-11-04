@@ -1,6 +1,16 @@
 ## Fedora on (Windows, VirtualBox, Vagrant) Setup
 **My personal development setup.**
 
+
+### Setup VM and SSH
+```
+cd .\Vagrant
+v up
+mkdir $HOME\.ssh -Force
+v ssh-config | out-file $HOME\.ssh\config -encoding utf8
+```
+
+
 #### Q&A
 ##### Why PC and not Mac?  
 I don't like the Ctrl, Super and Alt alternative keys in Mac.  
