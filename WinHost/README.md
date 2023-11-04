@@ -23,8 +23,8 @@
   ```
   Now close all PowerShell windows.
 
-- Install the fonts from `../Fonts`.
+- Install the fonts from [here](../Fonts).
 
-- Set some wallpapers. There are some nice ones in `../Wallpapers`.
+- Set some wallpapers. There are some nice ones [here](../Wallpapers).
 
 - Continue to launching your Fedora instance [here](../Vagrant/README.md).
