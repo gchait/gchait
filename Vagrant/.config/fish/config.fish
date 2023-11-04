@@ -99,4 +99,6 @@ alias vim='nvim'
 alias oldvim='\vim'
 alias vimdiff='nvim -d'
 
-source ~/.config/fish/work.fish
+if test -e ~/.config/fish/work.fish
+    source ~/.config/fish/work.fish
+end
