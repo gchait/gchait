@@ -1,4 +1,0 @@
-NotoMono NF
-Hack Nerd Font
-FiraMono Nerd Font
-DejaVuSansM Nerd Font
