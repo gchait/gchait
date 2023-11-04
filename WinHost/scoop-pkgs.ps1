@@ -13,11 +13,9 @@ scoop install insomnia
 scoop install spotify
 scoop install vlc
 
+scoop install Noto-NF
 scoop install Hack-NF
 scoop install FiraMono-NF
 scoop install DejaVuSansMono-NF
-scoop install Meslo-NF
-scoop install VictorMono-NF
-scoop install Noto-NF
 
 scoop update -a
