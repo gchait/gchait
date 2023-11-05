@@ -1,5 +1,5 @@
 set fish_greeting
-set PAGER
+set PAGER less
 set EDITOR nvim
 
 function __history_previous_command
