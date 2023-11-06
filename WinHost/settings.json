@@ -18,7 +18,9 @@
         "ms-python.python",
         "redhat.vscode-yaml",
         "fwcd.kotlin",
-        "kokakiwi.vscode-just"
+        "kokakiwi.vscode-just",
+        "samuelcolvin.jinjahtml"
     ],
-    "files.eol": "\n"
+    "files.eol": "\n",
+    "redhat.telemetry.enabled": false
 }
