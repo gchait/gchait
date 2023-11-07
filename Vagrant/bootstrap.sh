@@ -20,7 +20,7 @@ configure_user() {
 dnf update -y
 dnf install --setopt=install_weak_deps=false -y \
     tree sl vim neovim make ripgrep dnf-plugins-core util-linux-user \
-    python3-setuptools python3-pip cmatrix neofetch wget awscli2 \
+    python3-setuptools python3-pip cmatrix neofetch wget awscli2 openssl \
     zip gzip tar jq cloud-utils fish git lolcat python3-wheel exa \
     ca-certificates gnupg gcc curl dnsutils python3-netaddr npm htop
 
@@ -57,7 +57,7 @@ gpgcheck=1
 enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-7.0.asc
 EOF
-dnf install -y mongodb-mongosh
+dnf install -y mongodb-mongosh-shared-openssl3
 
 # External binaries
 wget -qO /usr/local/bin/yq \
