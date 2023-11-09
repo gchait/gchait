@@ -1,6 +1,7 @@
 local wezterm = require "wezterm"
 local mux = wezterm.mux
 local config = {}
+local wallpapers = wezterm.glob(wezterm.home_dir .. "/gchait/Wallpapers/*")
 
 if wezterm.config_builder then
   config = wezterm.config_builder()
@@ -13,6 +14,13 @@ config.color_scheme = "Molokai (Gogh)"
 config.font = wezterm.font "Hack Nerd Font Mono"
 config.front_end = "WebGpu"
 config.webgpu_power_preference = "HighPerformance"
+
+config.background = {
+  {
+    hsb = { brightness = 0.07 },
+    source = { File = wallpapers[math.random(#wallpapers)] }
+  }
+}
 
 wezterm.on("gui-startup", function(cmd)
   local tab, pane, window = mux.spawn_window {
