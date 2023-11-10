@@ -75,6 +75,9 @@ chmod +x /usr/local/bin/websocat
 # De-bloat
 hostnamectl hostname fedora
 > /etc/motd
+grep "#PrintLastLog yes" /etc/ssh/sshd_config \
+    && sed -i 's/#PrintLastLog yes/PrintLastLog no/' /etc/ssh/sshd_config \
+    && systemctl restart sshd
 
 # Ensure the filesystem takes all the space
 growpart /dev/sda 2 || true
