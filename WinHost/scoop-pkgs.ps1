@@ -20,5 +20,6 @@ scoop install insomnia
 scoop install spotify
 scoop install vlc
 scoop install tectonic
+scoop install sumatrapdf
 
 scoop update -a
