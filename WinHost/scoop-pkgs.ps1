@@ -18,5 +18,6 @@ scoop install vagrant
 scoop install insomnia
 scoop install spotify
 scoop install vlc
+scoop install tectonic
 
 scoop update -a
