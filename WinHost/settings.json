@@ -22,5 +22,16 @@
         "samuelcolvin.jinjahtml"
     ],
     "files.eol": "\n",
-    "redhat.telemetry.enabled": false
+    "git.enableSmartCommit": true,
+    "explorer.confirmDragAndDrop": false,
+    "texlab.build.executable": "tectonic",
+    "texlab.build.args": [
+        "-X",
+        "compile",
+        "%f",
+        "--synctex",
+        "--keep-logs",
+        "--keep-intermediates"
+    ],
+    "texlab.build.onSave": true
 }
