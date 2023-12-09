@@ -16,3 +16,12 @@ $env:MEMORY = if ($calcMem -gt 1) { $calcMem / 4 * 1024 } else { 1024 }
 $env:CPUS = if ($calcCpu -gt 1) { $calcCpu / 2 } else { 1 }
 
 New-Alias v vagrant
+
+function ntex {
+    mkdir "$args"
+    
+    if ($?) {
+        Copy-Item -Path $HOME\gchait\WinHost\LatexExample\* `
+            -Destination .\$args\ -Recurse
+    }
+}
