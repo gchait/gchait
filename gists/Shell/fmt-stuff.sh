@@ -1,0 +1,4 @@
+terraform fmt -recursive
+
+
+black .

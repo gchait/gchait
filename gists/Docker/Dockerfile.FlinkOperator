@@ -1,0 +1,13 @@
+FROM ghcr.io/apache/flink-kubernetes-operator:xxxxx
+
+ARG PLUGINS="flink-s3-fs-hadoop flink-s3-fs-presto"
+
+ENV FLINK_PLUGINS_DIR=/opt/flink/plugins
+ENV BASE_PLUGIN_JARS_URL=https://repo1.maven.org/maven2/org/apache/flink
+
+RUN cd ${FLINK_PLUGINS_DIR} \
+    && flink_version=$(ls ./flink-metrics-prometheus | cut -d"-" -f4 | sed "s/.jar//") \
+    && for plugin in ${PLUGINS}; \
+        do mkdir ${plugin} \
+        && wget ${BASE_PLUGIN_JARS_URL}/${plugin}/${flink_version}/${plugin}-${flink_version}.jar -P ${plugin}/; \
+    done

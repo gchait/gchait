@@ -1,0 +1,32 @@
+if [[ -r "${XDG_CACHE_HOME:-${HOME}/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  . "${XDG_CACHE_HOME:-${HOME}/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+export ZSH="${HOME}/.oh-my-zsh"
+export EDITOR=nvim
+export PAGER=
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+plugins=(git)
+
+. ${ZSH}/oh-my-zsh.sh
+
+zle_highlight=("paste:none")
+
+alias vi="nvim"
+alias vim="nvim"
+alias oldvim="\vim"
+alias vimdiff="nvim -d"
+
+# alias k="kubectl"
+# alias ka='f(){ kubectl "$@" --all-namespaces -o wide; unset -f f; }; f'
+# alias awsp='f(){ if [ -z "$1" ]; then; echo $AWS_PROFILE; else; export AWS_PROFILE="$1"; fi; unset -f f; }; f'
+# alias rtime="sudo timedatectl set-ntp false && sudo timedatectl set-ntp true"
+# rtime
+
+[[ -f ~/.p10k.zsh ]] && . ~/.p10k.zsh
+[[ -f /vagrant/hidden/.zshrc_extend ]] && . /vagrant/hidden/.zshrc_extend
+
+grep /Projects <(echo ${PWD}) > /dev/null || cd ~/Projects
+. ~/.venv/bin/activate

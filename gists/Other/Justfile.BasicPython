@@ -1,0 +1,64 @@
+set dotenv-load
+alias q := quick
+
+NEXT_VERSION := ```
+	yq ".appVersion" ${YAML_CONFIG} | \
+	python3 -c "print(round(float(input()) + 0.01, 2))"
+	```
+
+local: test build run finalize
+remote: bump tag login push finalize
+remote-only: test build remote
+
+stop:
+	docker compose down
+
+quick:
+  docker compose up allinone --build
+
+test:
+	#!/bin/bash
+	set -euo pipefail
+	python -m venv ./.venv
+	. ./.venv/bin/activate
+	set -x
+	pip install -q -r ./reqs.dev.txt -r ./reqs.txt
+	isort "${PY_SRC}" > /dev/null
+	black "${PY_SRC}" 2> /dev/null
+	flake8 --max-line-length 90 "${PY_SRC}"
+	pylint "${PY_SRC}"
+	bandit -r "${PY_SRC}"
+
+build:
+	docker compose build
+
+run:
+	docker compose up -d
+
+bump:
+	yq ".appVersion = {{NEXT_VERSION}}" ${YAML_CONFIG} > ${YAML_CONFIG}.tmp
+	mv ${YAML_CONFIG}.tmp ${YAML_CONFIG}
+
+tag:
+	docker tag ${LOCAL_REPO} ${REMOTE_REPO}:v{{NEXT_VERSION}}
+	docker tag ${LOCAL_REPO} ${REMOTE_REPO}:latest
+
+login:
+	aws ecr get-login-password --region ${AWS_REGION} | docker login \
+		--username AWS --password-stdin ${REGISTRY} &> /dev/null
+
+push:
+	#!/bin/bash
+	set -exuo pipefail
+	docker push ${REMOTE_REPO}:v{{NEXT_VERSION}}
+	docker push ${REMOTE_REPO}:latest
+	docker rmi ${REMOTE_REPO}:v{{NEXT_VERSION}}
+	docker rmi ${REMOTE_REPO}:latest
+	read -p "Enter the commit message: " commit_message
+	git add -A
+	git commit -m "${commit_message}"
+	git push origin
+
+finalize:
+	docker image prune -f
+	echo Done

@@ -1,0 +1,23 @@
+.has-details {
+  position: relative;
+}
+
+.details {
+  position: absolute;
+  top: 0;
+  transform: translateY(15%) scale(0);
+  transition: transform 0.1s ease-in;
+  transform-origin: left;
+  display: inline;
+  background: white;
+  z-index: 20;
+  min-width: max-content;
+  padding: 1rem;
+  border: 1px solid black;
+  white-space: pre-wrap;
+  max-width: 100%;
+}
+
+.has-details:hover .details {
+  transform: translateY(15%) scale(1);
+}

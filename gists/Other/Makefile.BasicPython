@@ -1,0 +1,46 @@
+AWS_ACC_ID = XXXXX
+AWS_REGION = XXXXX
+REPO = XXXXX
+VERSION = $$(yq ".appVersion" ./chart/values.yaml)
+
+.PHONY = lint bump build run login repo tag push local remote
+.DEFAULT_GOAL = local
+
+lint:
+	@python3 -m black .
+	@find . -type f -name "*.py" -exec python3 -m pylint {} + || true
+
+bump:
+	@VERSION=$$(python3 -c "print(round(${VERSION} + 0.01, 2))") \
+	&& yq ".appVersion = $${VERSION}" ./chart/values.yaml > ./chart/values.yaml.tmp \
+		&& mv ./chart/values.yaml.tmp ./chart/values.yaml
+
+build:
+	@DOCKER_SCAN_SUGGEST=false docker compose build
+
+run:
+	@docker compose up -d
+
+login:
+	@aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS \
+		--password-stdin ${AWS_ACC_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com &> /dev/null
+
+repo:
+	@aws ecr create-repository --region ${AWS_REGION} --repository-name ${REPO} &> /dev/null || true
+
+tag:
+	@docker tag xxxxx ${AWS_ACC_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPO}:v${VERSION}
+	@docker tag xxxxx ${AWS_ACC_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPO}:latest
+
+push:
+	@docker push ${AWS_ACC_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPO}:v${VERSION}
+	@docker push ${AWS_ACC_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPO}:latest
+	@docker rmi ${AWS_ACC_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPO}:v${VERSION}
+	@docker rmi ${AWS_ACC_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPO}:latest
+	# @docker image prune
+
+local: lint bump build run
+	@echo "Done"
+
+remote: login repo tag push
+	@echo "Done"

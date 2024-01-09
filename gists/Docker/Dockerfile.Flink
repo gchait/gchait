@@ -1,0 +1,8 @@
+ARG VERSION=xxxxx
+FROM flink:${VERSION}
+
+ARG VERSION
+ENV ENABLE_BUILT_IN_PLUGINS=flink-s3-fs-hadoop-${VERSION}.jar;flink-s3-fs-presto-${VERSION}.jar
+
+USER flink
+WORKDIR /opt/flink

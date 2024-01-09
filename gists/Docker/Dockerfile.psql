@@ -1,0 +1,11 @@
+FROM alpine:3.18
+
+RUN apk --no-cache upgrade \
+    && apk --no-cache add postgresql15-client
+
+WORKDIR /app
+
+COPY create_user_database.sql /app/
+COPY create_user_database.sh /app/
+
+CMD ["./create_user_database.sh"]

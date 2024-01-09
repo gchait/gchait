@@ -1,0 +1,13 @@
+---
+# https://github.com/newrelic/newrelic-prometheus-configurator/blob/main/charts/newrelic-prometheus-agent/values.yaml
+# Bundled Newrelic Prometheus Agent -> MSK
+newrelic-prometheus-agent:
+  config:
+    extra_scrape_configs:
+      - job_name: msk
+        static_configs:
+          - targets:
+              %{ for broker in brokers ~}
+              - ${broker}:${jmx_exporter_port}
+              - ${broker}:${node_exporter_port}
+              %{ endfor ~}

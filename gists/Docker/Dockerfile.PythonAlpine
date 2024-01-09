@@ -1,0 +1,34 @@
+FROM python:3.11-alpine
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PORT=9999 \
+    OS_USER=yyyy
+
+WORKDIR /tmp
+
+# OS static
+RUN adduser --disabled-password --no-create-home ${OS_USER}
+
+# Temporary dependencies
+RUN apk add --update --no-cache --virtual ./build-deps \
+    build-base musl-dev zlib zlib-dev linux-headers
+
+# OS packages
+RUN apk add --update --no-cache xxxx zzzz
+
+# Temporary files
+COPY ./reqs.txt ./reqs.txt
+
+# Python packages and general cleanup
+RUN pip install --upgrade pip \
+    && pip install -r ./reqs.txt \
+    && apk del ./build-deps \
+    && rm -rf ./*
+
+# Application
+USER ${OS_USER}
+WORKDIR /app
+COPY . .
+
+CMD ./run.sh

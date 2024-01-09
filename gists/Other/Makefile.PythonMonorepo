@@ -1,0 +1,79 @@
+SHELL := /bin/bash -ex
+AWS_ACC_ID = aaa
+AWS_REGION = bbb
+REPO = ccc
+MICROSERVICES = ddd
+PY_SRCS = eee
+VERSION = $$(yq ".appVersion" ./chart/values.yaml)
+export DOCKER_SCAN_SUGGEST = false
+
+.PHONY = test bump build run login repo tag push local remote
+.DEFAULT_GOAL = local
+
+
+test:
+	@python -m venv ./.venv \
+		&& set +x && . ./.venv/bin/activate && set -x \
+		&& pip install -q -r ./test_reqs.txt -r ./reqs.txt \
+		&& for src in ${PY_SRCS}; do \
+			isort "$${src}" > /dev/null; \
+			black "$${src}" 2> /dev/null; \
+			flake8 --max-line-length 90 "$${src}"; \
+			pylint "$${src}"; \
+			bandit -r "$${src}"; \
+		done
+
+
+bump:
+	@VERSION=$$(python3 -c "print(round(${VERSION} + 0.01, 2))") \
+	&& yq ".appVersion = $${VERSION}" ./chart/values.yaml > ./chart/values.yaml.tmp \
+		&& mv ./chart/values.yaml.tmp ./chart/values.yaml
+
+
+build:
+	@docker compose build
+
+
+run:
+	@docker compose up -d
+
+
+login:
+	@aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS \
+		--password-stdin ${AWS_ACC_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com &> /dev/null
+
+
+repo:
+	@:
+# 	@for microservice in ${MICROSERVICES}; do \
+# 		aws ecr create-repository --region ${AWS_REGION} --repository-name ${REPO}-$${microservice} &> /dev/null || true; \
+# 	done
+
+
+tag:
+	@for microservice in ${MICROSERVICES}; do \
+		docker tag ${REPO}-$${microservice} ${AWS_ACC_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPO}-$${microservice}:v${VERSION}; \
+		docker tag ${REPO}-$${microservice} ${AWS_ACC_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPO}-$${microservice}:latest; \
+	done
+
+
+push:
+	@for microservice in ${MICROSERVICES}; do \
+		docker push ${AWS_ACC_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPO}-$${microservice}:v${VERSION}; \
+		docker push ${AWS_ACC_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPO}-$${microservice}:latest; \
+		docker rmi ${AWS_ACC_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPO}-$${microservice}:v${VERSION}; \
+		docker rmi ${AWS_ACC_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPO}-$${microservice}:latest; \
+	done
+	
+	@read -p "Enter the commit message: " commit_message \
+		&& git add -A && git commit -m "$${commit_message}" && git push origin
+
+
+finalize:
+	@docker image prune -f
+	@echo "Done"
+
+
+local: test bump build run finalize
+remote: login repo tag push finalize
+remote-only: test bump build login repo tag push finalize
