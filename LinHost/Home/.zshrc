@@ -11,10 +11,11 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
-bindkey ";5C" forward-word
-bindkey ";5D" backward-word
-bindkey ";3C" forward-word
-bindkey ";3D" backward-word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+bindkey "^[[3~" delete-char
 
 export EDITOR=nvim
 export PAGER=
