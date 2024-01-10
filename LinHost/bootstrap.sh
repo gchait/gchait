@@ -25,7 +25,7 @@ dnf update -y
 dnf install --setopt=install_weak_deps=false -y \
     tree sl vim neovim make ripgrep dnf-plugins-core util-linux-user \
     python3-setuptools python3-pip cmatrix neofetch wget awscli2 openssl \
-    zip gzip tar jq cloud-utils zsh git lolcat python3-wheel eza \
+    zip gzip tar jq cloud-utils zsh git lolcat python3-wheel eza zsh-autosuggestions \
     ca-certificates gnupg gcc curl dnsutils python3-netaddr npm htop
 
 # Docker
