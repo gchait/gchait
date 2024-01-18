@@ -1,6 +1,7 @@
 #!/bin/bash -xe
 
-export OS_USERNAME="vagrant"
+set -o nounset
+export OS_USERNAME="${1}"
 
 configure_user() {
     # p10k
@@ -19,7 +20,7 @@ configure_user() {
     fi
 
     # System-level Python packages
-    pip3 install isort ruff bandit requests pyyaml neovim
+    pip3 install requests pyyaml neovim
 
     # Git pre-setup
     [[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -f ~/.ssh/id_rsa -q -N ""
@@ -40,7 +41,7 @@ dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker
 echo '{"default-address-pools":[{"base":"10.2.0.0/16","size":24}]}' > /etc/docker/daemon.json
 systemctl restart docker
 systemctl enable docker
-usermod -aG docker vagrant
+usermod -aG docker ${OS_USERNAME}
 
 # Kubectl
 cat <<EOF | tee /etc/yum.repos.d/kubernetes.repo
@@ -85,4 +86,4 @@ fi
 # Regular user configuration
 export -f configure_user
 su ${OS_USERNAME} -c "bash -xec configure_user"
-chsh -s $(which fish) ${OS_USERNAME}
+chsh -s $(which zsh) ${OS_USERNAME}

@@ -11,7 +11,6 @@ codium --install-extension Catppuccin.catppuccin-vsc-icons
 codium --install-extension efoerster.texlab
 codium --install-extension jeanp413.open-remote-ssh
 codium --install-extension khan.two-monokai
-codium --install-extension olifink.fedora-gnome-light-dark
 codium --install-extension PKief.material-product-icons
 
 scoop install grep

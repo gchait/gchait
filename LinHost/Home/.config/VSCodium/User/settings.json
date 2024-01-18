@@ -1,5 +1,4 @@
 {
-    "window.zoomLevel": 1,
     "files.autoSave": "onFocusChange",
     "editor.fontFamily": "Hack Nerd Font Mono",
     "workbench.startupEditor": "none",
@@ -8,17 +7,6 @@
     "workbench.iconTheme": "catppuccin-macchiato",
     "workbench.colorTheme": "Two Monokai Flat",
     "editor.fontLigatures": true,
-    "remote.SSH.defaultExtensions": [
-        "eamodio.gitlens",
-        "ecmel.vscode-html-css",
-        "esbenp.prettier-vscode",
-        "hashicorp.terraform",
-        "ms-azuretools.vscode-docker",
-        "ms-pyright.pyright",
-        "redhat.vscode-yaml",
-        "kokakiwi.vscode-just",
-        "samuelcolvin.jinjahtml"
-    ],
     "files.eol": "\n",
     "git.enableSmartCommit": true,
     "explorer.confirmDragAndDrop": false,
@@ -32,12 +20,6 @@
         "--keep-intermediates"
     ],
     "texlab.build.onSave": true,
-    "texlab.forwardSearch.executable": "sumatrapdf",
-    "texlab.forwardSearch.args": [
-        "-reuse-instance",
-        "%p",
-        "-forward-search",
-        "%f",
-        "%l"
-    ]
+    "redhat.telemetry.enabled": false,
+    "git.autofetch": true
 }

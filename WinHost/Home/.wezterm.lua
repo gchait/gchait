@@ -17,7 +17,7 @@ config.webgpu_power_preference = "HighPerformance"
 
 config.background = {
   {
-    hsb = { brightness = 0.07 },
+    hsb = { brightness = 0.05 },
     source = { File = wallpapers[math.random(#wallpapers)] }
   }
 }

@@ -1,5 +1,0 @@
-isort
-black
-flake8
-pylint
-bandit
