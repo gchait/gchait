@@ -3,6 +3,10 @@
 export OS_USERNAME="vagrant"
 
 configure_user() {
+    # p10k
+    [[ -d ~/powerlevel10k ]] || git clone \
+        https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k --depth 1
+    
     # NvChad
     [[ -d ~/.config/nvim ]] || git clone \
         https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
