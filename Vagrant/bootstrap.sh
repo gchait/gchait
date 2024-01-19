@@ -8,10 +8,6 @@ configure_user() {
     [[ -d ~/powerlevel10k ]] || git clone \
         https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k --depth 1
     
-    # NvChad
-    [[ -d ~/.config/nvim ]] || git clone \
-        https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-
     # Dotfiles
     if [ ${OS_USERNAME} = "vagrant" ]; then
         cp -r /vagrant/.config ~/
@@ -20,7 +16,7 @@ configure_user() {
     fi
 
     # System-level Python packages
-    pip3 install requests pyyaml neovim
+    pip3 install requests pyyaml
 
     # Git pre-setup
     [[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -f ~/.ssh/id_rsa -q -N ""
@@ -30,10 +26,10 @@ configure_user() {
 # Base repo packages
 dnf update -y
 dnf install --setopt=install_weak_deps=false -y \
-    tree sl vim neovim make ripgrep dnf-plugins-core util-linux-user figlet zsh asciiquarium \
+    tree vim make dnf-plugins-core util-linux-user figlet zsh asciiquarium \
     python3-setuptools python3-pip cmatrix neofetch wget awscli2 openssl asciinema \
-    zip gzip tar jq cloud-utils zsh-autosuggestions git lolcat python3-wheel eza poetry \
-    ca-certificates gnupg gcc curl dnsutils python3-netaddr npm htop just postgresql
+    zip gzip tar jq zsh-autosuggestions git lolcat python3-wheel eza poetry \
+    ca-certificates gnupg gcc curl dnsutils python3-netaddr htop just postgresql
 
 # Docker
 dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
@@ -75,7 +71,7 @@ if [ ${OS_USERNAME} = "vagrant" ]; then
     hostnamectl hostname fedora
     > /etc/motd
     grep "#PrintLastLog yes" /etc/ssh/sshd_config \
-        && sed -i 's/#PrintLastLog yes/PrintLastLog no/' /etc/ssh/sshd_config \
+        && sed -i "s/#PrintLastLog yes/PrintLastLog no/" /etc/ssh/sshd_config \
         && systemctl restart sshd
     
     # Ensure the filesystem takes all the space

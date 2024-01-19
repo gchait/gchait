@@ -6,7 +6,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 zle_highlight=("paste:none")
 
 autoload -Uz compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
 
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
@@ -17,18 +17,12 @@ bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 bindkey "^[[3~" delete-char
 
-export EDITOR=nvim
+export EDITOR=vim
 export PAGER=
 
-alias ls='eza -a --color=always --group-directories-first'
-alias ll='eza -al --color=always --group-directories-first'
-alias lt='eza -aT --color=always --group-directories-first'
-alias l.='eza -a | grep --color=never -E "^\."'
-
-alias vi="nvim"
-alias vim="nvim"
-alias oldvim="\vim"
-alias vimdiff="nvim -d"
+alias ls="eza -a --color=always --group-directories-first"
+alias ll="eza -al --color=always --group-directories-first"
+alias lt="eza -aT --color=always --group-directories-first"
 
 alias d="docker"
 alias k="kubectl"

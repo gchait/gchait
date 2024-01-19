@@ -1,6 +1,6 @@
 set fish_greeting
 set PAGER less
-set EDITOR nvim
+set EDITOR vim
 
 function __history_previous_command
   switch (commandline -t)
@@ -33,17 +33,6 @@ function backup --argument filename
     cp $filename $filename.bak
 end
 
-function copy
-    set count (count $argv | tr -d \n)
-    if test "$count" = 2; and test -d "$argv[1]"
-	set from (echo $argv[1] | trim-right /)
-	set to (echo $argv[2])
-        command cp -r $from $to
-    else
-        command cp $argv
-    end
-end
-
 function coln
     while read -l input
         echo $input | awk '{print $'$argv[1]'}'
@@ -67,37 +56,9 @@ function awsp --argument profile
     end
 end
 
-alias ..='cd ..'
-alias ...='cd ../..'
-alias .3='cd ../../..'
-alias .4='cd ../../../..'
-alias .5='cd ../../../../..'
-
 alias ls='eza -a --color=always --group-directories-first'
 alias ll='eza -al --color=always --group-directories-first'
 alias lt='eza -aT --color=always --group-directories-first'
-alias l.='eza -a | grep -E "^\."'
-
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-
-alias addup='git add -u'
-alias addall='git add .'
-alias branch='git branch'
-alias checkout='git checkout'
-alias clone='git clone'
-alias commit='git commit -m'
-alias fetch='git fetch'
-alias pull='git pull origin'
-alias push='git push origin'
-alias tag='git tag'
-alias newtag='git tag -a'
-
-alias vi='nvim'
-alias vim='nvim'
-alias oldvim='\vim'
-alias vimdiff='nvim -d'
 
 if test -e ~/.config/fish/work.fish
     source ~/.config/fish/work.fish
