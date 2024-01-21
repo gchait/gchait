@@ -17,7 +17,8 @@
         "ms-pyright.pyright",
         "redhat.vscode-yaml",
         "kokakiwi.vscode-just",
-        "samuelcolvin.jinjahtml"
+        "samuelcolvin.jinjahtml",
+        "bungcip.better-toml"
     ],
     "files.eol": "\n",
     "git.enableSmartCommit": true,
