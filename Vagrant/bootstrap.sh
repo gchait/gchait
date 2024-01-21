@@ -12,7 +12,7 @@ configure_user() {
     if [ ${OS_USERNAME} = "vagrant" ]; then
         cp -r /vagrant/Home/.* ~/
     else
-        cp -r ./Home/.* ~/
+        cp -Lr ./Home/.* ~/
     fi
 
     # System-level Python packages
