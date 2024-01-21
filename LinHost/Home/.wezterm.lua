@@ -1,5 +1,4 @@
 local wezterm = require "wezterm"
-local mux = wezterm.mux
 local config = {}
 local wallpapers = wezterm.glob(wezterm.home_dir .. "/gchait/Wallpapers/*")
 
@@ -9,7 +8,7 @@ end
 
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "NeverPrompt"
-config.color_scheme = "Molokai (Gogh)"
+config.color_scheme = "Panda (Gogh)"
 config.font = wezterm.font "Hack Nerd Font Mono"
 config.front_end = "WebGpu"
 config.webgpu_power_preference = "HighPerformance"
