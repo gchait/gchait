@@ -1,4 +1,3 @@
-work.fish
+.hidden_zshrc
 .vagrant
 *.swp
-.idea
