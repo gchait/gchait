@@ -10,14 +10,14 @@ end
 config.default_prog = { "ssh", "default" }
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "NeverPrompt"
-config.color_scheme = "Molokai (Gogh)"
+config.color_scheme = "Panda (Gogh)"
 config.font = wezterm.font "Hack Nerd Font Mono"
 config.front_end = "WebGpu"
 config.webgpu_power_preference = "HighPerformance"
 
 config.background = {
   {
-    hsb = { brightness = 0.05 },
+    hsb = { brightness = 0.03 },
     source = { File = wallpapers[math.random(#wallpapers)] }
   }
 }
