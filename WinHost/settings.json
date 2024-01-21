@@ -40,5 +40,6 @@
         "-forward-search",
         "%f",
         "%l"
-    ]
+    ],
+    "redhat.telemetry.enabled": false
 }
