@@ -24,8 +24,10 @@ alias ls="eza -a --color=always --group-directories-first"
 alias ll="eza -al --color=always --group-directories-first"
 alias lt="eza -aT --color=always --group-directories-first"
 
+alias awsp='f(){ if [ -z "$1" ]; then; echo $AWS_PROFILE; else; export AWS_PROFILE="$1"; fi; unset -f f; }; f'
 alias d="docker"
 alias k="kubectl"
 
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ -f ~/.hidden_zshrc ]] && source ~/.hidden_zshrc
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
