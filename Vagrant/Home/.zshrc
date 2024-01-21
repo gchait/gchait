@@ -11,6 +11,7 @@ zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
+bindkey -e
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;3C" forward-word
