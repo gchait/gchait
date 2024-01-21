@@ -17,12 +17,6 @@
   pkill -f vscodium-server
   ```
 
-- Verify the setup is working correctly:
-  - ```
-    /vagrant/test/run.sh
-    ```
-  - Open a browser at http://localhost:8080.
-
 - Save a new GitHub SSH key [here](https://github.com/settings/keys):
   ```
   cat ~/.ssh/id_rsa.pub
