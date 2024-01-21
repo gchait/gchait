@@ -10,7 +10,7 @@ configure_user() {
     
     # Dotfiles
     if [ ${OS_USERNAME} = "vagrant" ]; then
-        cp -r /vagrant/.config ~/
+        cp -r /vagrant/Home/.* ~/
     else
         cp -r ./Home/.* ~/
     fi
