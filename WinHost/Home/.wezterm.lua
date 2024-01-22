@@ -23,12 +23,23 @@ config.background = {
 }
 
 wezterm.on("gui-startup", function(cmd)
-  local tab, pane, window = mux.spawn_window {
+  local tab1, pane1, window = mux.spawn_window {
     args = { "powershell", "-nologo" },
   }
   
+  tab1:set_title "windows"
   window:gui_window():maximize()
-  local _, second_pane, _ = window:spawn_tab(cmd or {})
+  local tab2, pane2, window = window:spawn_tab(cmd or {})
 end)
+
+wezterm.on("format-tab-title",
+  function(tab, tabs, panes, config, hover, max_width)
+    if tab.tab_title == "windows" then
+      return "windows"
+    else
+      return "fedora"
+    end
+  end
+)
 
 return config
