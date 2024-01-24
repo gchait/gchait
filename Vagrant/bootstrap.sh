@@ -41,42 +41,24 @@ get_docker() {
 dnf update -y
 dnf install --setopt=install_weak_deps=false -y \
     tree vim make dnf-plugins-core util-linux-user \
-    figlet zsh asciiquarium cronie rust cargo fzf \
-    python3-setuptools python3-pip cmatrix fastfetch \
+    figlet zsh asciiquarium cronie rust cargo fzf just \
+    python3-setuptools python3-pip kubernetes-client \
     wget awscli2 openssl asciinema lolcat zip gzip \
     tar jq zsh-autosuggestions git eza poetry htop \
     python3-wheel gnupg gcc clang curl postgresql \
-    ca-certificates just dnsutils ranger
+    ca-certificates dnsutils cmatrix ranger cmake
 
 # Docker
 docker ps &> /dev/null || get_docker
 
-# Kubectl
-cat <<EOF | tee /etc/yum.repos.d/kubernetes.repo
-[kubernetes]
-name=Kubernetes
-baseurl=https://pkgs.k8s.io/core:/stable:/v1.28/rpm/
-enabled=1
-gpgcheck=1
-gpgkey=https://pkgs.k8s.io/core:/stable:/v1.28/rpm/repodata/repomd.xml.key
-EOF
-dnf install -y kubectl
-
-# MongoDB Shell
-cat <<EOF | tee /etc/yum.repos.d/mongodb-org-7.0.repo
-[mongodb-org-7.0]
-name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/9/mongodb-org/7.0/x86_64/
-gpgcheck=1
-enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-7.0.asc
-EOF
-dnf install -y mongodb-mongosh-shared-openssl3
-
-# External binaries
+# External executables
 wget -qO /usr/local/bin/yq \
     https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
 chmod +x /usr/local/bin/yq
+
+wget -qO /usr/local/bin/pfetch \
+    https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch
+chmod +x /usr/local/bin/pfetch
 
 if [ ${OS_USERNAME} = "vagrant" ]; then
     # De-bloat
@@ -89,6 +71,11 @@ if [ ${OS_USERNAME} = "vagrant" ]; then
     # Ensure the filesystem takes all the space
     growpart /dev/sda 2 || true
     xfs_growfs /dev/sda2 || true
+
+    # Flex
+    dnf install -y neofetch
+else
+    dnf install -y fastfetch
 fi
 
 # Regular user configuration
