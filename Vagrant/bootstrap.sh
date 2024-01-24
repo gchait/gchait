@@ -42,11 +42,11 @@ dnf update -y
 dnf install --setopt=install_weak_deps=false -y \
     tree vim make dnf-plugins-core util-linux-user \
     figlet zsh asciiquarium cronie rust cargo fzf \
-    python3-setuptools python3-pip cmatrix neofetch \
+    python3-setuptools python3-pip cmatrix fastfetch \
     wget awscli2 openssl asciinema lolcat zip gzip \
     tar jq zsh-autosuggestions git eza poetry htop \
     python3-wheel gnupg gcc clang curl postgresql \
-    ca-certificates just dnsutils python3-netaddr
+    ca-certificates just dnsutils ranger
 
 # Docker
 docker ps &> /dev/null || get_docker
