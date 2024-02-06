@@ -1,9 +1,7 @@
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-iwr -useb get.scoop.sh | iex
+powershell "Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression"
+
 scoop install git
-
-Copy-Item -Path .\Home\* -Destination $HOME -Recurse -Force
-
 scoop bucket add extras
 scoop install vscode
 
@@ -30,4 +28,5 @@ scoop install vlc
 scoop install tectonic
 scoop install sumatrapdf
 
+Copy-Item -Path "$HOME\gchait\Home\*" -Destination "$HOME" -Recurse -Force
 scoop update -a
