@@ -23,10 +23,11 @@ code --install-extension kokakiwi.vscode-just
 code --install-extension samuelcolvin.jinjahtml
 code --install-extension tamasfe.even-better-toml
 
-scoop install grep
-scoop install vlc
-scoop install tectonic
-scoop install sumatrapdf
+scoop install `
+    eza fastfetch figlet fzf vim grep jq `
+    just kubectl mongosh neofetch poetry `
+    postgresql python sumatrapdf tectonic `
+    vlc yq zip
 
 Copy-Item -Path "$HOME\gchait\Home\*" -Destination "$HOME" -Recurse -Force
 scoop update -a
