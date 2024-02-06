@@ -1,0 +1,5 @@
+[user]
+	name = "Guy Chait"
+	email =
+[core]
+	autocrlf = false

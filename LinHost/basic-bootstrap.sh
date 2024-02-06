@@ -1,1 +1,0 @@
-../Vagrant/bootstrap.sh

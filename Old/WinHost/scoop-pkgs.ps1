@@ -1,6 +1,5 @@
 scoop bucket add extras
 
-scoop install 7zip
 scoop install wezterm
 scoop install vscodium
 
@@ -15,7 +14,6 @@ codium --install-extension PKief.material-product-icons
 
 scoop install grep
 scoop install vagrant
-scoop install insomnia
 scoop install spotify
 scoop install vlc
 scoop install tectonic

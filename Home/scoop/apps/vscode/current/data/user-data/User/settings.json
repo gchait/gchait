@@ -1,0 +1,33 @@
+{
+    "window.zoomLevel": 1,
+    "files.autoSave": "onFocusChange",
+    "editor.fontFamily": "Hack Nerd Font Mono",
+    "workbench.startupEditor": "none",
+    "explorer.confirmDelete": false,
+    "workbench.productIconTheme": "material-product-icons",
+    "workbench.iconTheme": "catppuccin-macchiato",
+    "workbench.colorTheme": "Panda Syntax",
+    "editor.fontLigatures": true,
+    "files.eol": "\n",
+    "git.enableSmartCommit": true,
+    "explorer.confirmDragAndDrop": false,
+    "texlab.build.executable": "tectonic",
+    "texlab.build.args": [
+        "-X",
+        "compile",
+        "%f",
+        "--synctex",
+        "--keep-logs",
+        "--keep-intermediates"
+    ],
+    "texlab.build.onSave": true,
+    "texlab.forwardSearch.executable": "sumatrapdf",
+    "texlab.forwardSearch.args": [
+        "-reuse-instance",
+        "%p",
+        "-forward-search",
+        "%f",
+        "%l"
+    ],
+    "redhat.telemetry.enabled": false
+}
