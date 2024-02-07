@@ -9,3 +9,4 @@ alias d="docker"
 alias k="kubectl"
 
 [[ -f ~/.hidden_bashrc ]] && source ~/.hidden_bashrc
+eval "$(starship init bash)"
