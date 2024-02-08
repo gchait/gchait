@@ -1,5 +1,5 @@
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-powershell "Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression"
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+powershell "Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression"
 
 scoop install git
 scoop bucket add extras
@@ -22,10 +22,11 @@ code --install-extension redhat.vscode-yaml
 code --install-extension kokakiwi.vscode-just
 code --install-extension samuelcolvin.jinjahtml
 code --install-extension tamasfe.even-better-toml
+code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
 
 scoop install `
-    eza fastfetch figlet fzf vim grep jq `
-    just kubectl mongosh poetry vlc yq zip `
+    eza fastfetch figlet fzf vim grep jq terraform `
+    just kubectl mongosh poetry vlc yq zip ripgrep `
     postgresql python sumatrapdf tectonic starship
 
 Copy-Item -Path "$HOME\gchait\Home\*" -Destination "$HOME" -Recurse -Force
