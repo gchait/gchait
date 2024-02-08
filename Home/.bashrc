@@ -22,7 +22,7 @@ shopt -s histappend
 shopt -s expand_aliases
 shopt -s checkwinsize
 
-[[ -f ~/.hidden_bashrc ]] && source ~/.hidden_bashrc
+test -f ~/.hidden_bashrc && . ~/.hidden_bashrc
 
 function set_title(){
     echo -ne "\033]0;$(basename "$PWD")\a"

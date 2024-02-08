@@ -44,6 +44,8 @@
     {
         "defaults": 
         {
+            "bellStyle": "none",
+            "closeOnExit": "always",
             "colorScheme": "Snazzy",
             "font": 
             {
