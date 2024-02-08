@@ -27,7 +27,8 @@ code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
 scoop install `
     eza fastfetch figlet fzf vim grep jq terraform `
     just kubectl mongosh poetry vlc yq zip ripgrep `
-    postgresql python sumatrapdf tectonic starship
+    postgresql python sumatrapdf tectonic starship `
+    spotify windows-terminal
 
 Copy-Item -Path "$HOME\gchait\Home\*" -Destination "$HOME" -Recurse -Force
 scoop update -a
