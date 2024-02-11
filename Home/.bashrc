@@ -7,7 +7,6 @@ export PAGER=
 alias ls="eza -a --group-directories-first"
 alias ll="ls -l"
 alias lt="ls -T"
-
 alias df="df -hT"
 alias ff="fastfetch"
 alias j="just"
@@ -22,6 +21,7 @@ shopt -s histappend
 shopt -s expand_aliases
 shopt -s checkwinsize
 
+bind "set completion-ignore-case on"
 test -f ~/.hidden_bashrc && . ~/.hidden_bashrc
 
 function set_title(){
