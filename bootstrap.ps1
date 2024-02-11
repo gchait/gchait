@@ -10,7 +10,6 @@ reg import "$HOME\scoop\apps\vscode\current\install-associations.reg"
 
 code --install-extension tinkertrain.theme-panda
 code --install-extension Catppuccin.catppuccin-vsc-icons
-code --install-extension efoerster.texlab
 code --install-extension PKief.material-product-icons
 code --install-extension eamodio.gitlens
 code --install-extension ecmel.vscode-html-css
@@ -26,9 +25,8 @@ code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
 
 scoop install `
     eza fastfetch figlet fzf vim grep jq terraform `
-    just kubectl mongosh poetry vlc yq zip ripgrep `
-    postgresql python sumatrapdf tectonic starship `
-    spotify windows-terminal
+    just kubectl mongosh vlc yq zip ripgrep spotify `
+    postgresql python starship windows-terminal
 
 Copy-Item -Path "$HOME\gchait\Home\*" -Destination "$HOME" -Recurse -Force
 scoop update -a
