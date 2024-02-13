@@ -1,0 +1,51 @@
+SHELL := /bin/bash -ex
+LOCAL_REPO := kt-hello-world-backend
+REMOTE_REPO := gchait/kt-hello-world-backend
+GET_VER := grep "^version=" ./gradle.properties | cut -d= -f2
+
+.PHONY = stop local remote all
+.DEFAULT_GOAL = local
+
+build-jar:
+	@./gradlew buildFatJar
+
+test:
+	@./gradlew test 2> /dev/null
+
+build-image:
+	@docker compose build
+
+run:
+	@docker compose up -d
+
+bump:
+	@v=$$(${GET_VER}) \
+		&& nv="$${v%.*}.$$(($${v##*.}+1))" \
+		&& sed -i "s/^version=$${v}/version=$${nv}/" ./gradle.properties
+
+push-git:
+	@read -p "Enter the commit message: " commit_message \
+		&& git add -A \
+		&& git commit -m "$${commit_message}" \
+		&& git push origin
+
+tag-image:
+	@docker tag ${LOCAL_REPO} ${REMOTE_REPO}:v$$(${GET_VER})
+	@docker tag ${LOCAL_REPO} ${REMOTE_REPO}:latest
+
+push-image:
+	@docker push ${REMOTE_REPO}:v$$(${GET_VER})
+	@docker push ${REMOTE_REPO}:latest
+	@docker rmi ${REMOTE_REPO}:v$$(${GET_VER})
+	@docker rmi ${REMOTE_REPO}:latest
+
+finalize:
+	@docker image prune -f
+	@echo Done
+
+stop:
+	@docker compose down
+
+local: build-jar test build-image run finalize
+remote: bump push-git tag-image push-image finalize
+all: local remote
