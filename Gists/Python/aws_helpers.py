@@ -28,4 +28,3 @@ async def get_raw_ec2_instances(
   for reservation in filtered_ec2_instances["Reservations"]:
       for instance in reservation["Instances"]:
           yield instance
-          

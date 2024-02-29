@@ -57,4 +57,3 @@ spec:
                 - "sh"
                 - "-c"
                 - "kubectl delete -A --field-selector 'status.phase=Failed' pods"
-                

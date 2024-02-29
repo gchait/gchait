@@ -44,4 +44,3 @@ spec:
       operator: NotIn
       values:
         - XXX
-        
