@@ -8,4 +8,3 @@ gpgcheck=1
 repo_gpgcheck=0
 gpgkey=file:///usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-nonfree-fedora-$releasever
 skip_if_unavailable=True
-
