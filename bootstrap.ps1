@@ -30,5 +30,7 @@ scoop install `
     aws aws-session-manager-plugin ccleaner mongodb `
     rufus ripgrep gron
 
+pip install certifi requests pipenv
+
 Copy-Item -Path "$HOME\gchait\Home\*" -Destination "$HOME" -Recurse -Force
 scoop update -a
