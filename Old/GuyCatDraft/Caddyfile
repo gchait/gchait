@@ -1,0 +1,10 @@
+{
+	servers {
+		protocols h1 h2
+	}
+}
+
+{$SITE_ADDRESS} {
+	encode gzip
+	reverse_proxy {$API_HOST}
+}
