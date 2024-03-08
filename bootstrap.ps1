@@ -27,7 +27,7 @@ scoop install `
     eza fastfetch figlet vim grep jq terraform `
     just kubectl mongosh vlc zip spotify helm python `
     postgresql starship windows-terminal yq draw.io `
-    ccleaner rufus ripgrep gron dart
+    ccleaner rufus ripgrep gron dart@3.3.0
 
 Copy-Item -Path "$HOME\gchait\Home\*" -Destination "$HOME" -Recurse -Force
 scoop update -a
