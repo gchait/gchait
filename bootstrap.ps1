@@ -24,11 +24,10 @@ code --install-extension tamasfe.even-better-toml
 code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
 
 scoop install `
-    eza fastfetch figlet fzf vim grep jq terraform `
+    eza fastfetch figlet vim grep jq terraform `
     just kubectl mongosh vlc zip spotify helm python `
     postgresql starship windows-terminal yq draw.io `
-    aws aws-session-manager-plugin ccleaner mongodb `
-    rufus ripgrep gron
+    ccleaner rufus ripgrep gron
 
 pip install certifi requests pipenv
 
