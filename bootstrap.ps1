@@ -27,9 +27,7 @@ scoop install `
     eza fastfetch figlet vim grep jq terraform `
     just kubectl mongosh vlc zip spotify helm python `
     postgresql starship windows-terminal yq draw.io `
-    ccleaner rufus ripgrep gron
-
-pip install certifi requests pipenv
+    ccleaner rufus ripgrep gron dart
 
 Copy-Item -Path "$HOME\gchait\Home\*" -Destination "$HOME" -Recurse -Force
 scoop update -a
