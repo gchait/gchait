@@ -8,20 +8,21 @@ scoop install vscode
 reg import "$HOME\scoop\apps\vscode\current\install-context.reg"
 reg import "$HOME\scoop\apps\vscode\current\install-associations.reg"
 
-code --install-extension tinkertrain.theme-panda
-code --install-extension Catppuccin.catppuccin-vsc-icons
-code --install-extension PKief.material-product-icons
+code --install-extension catppuccin.catppuccin-vsc-icons
+code --install-extension dart-code.dart-code
 code --install-extension eamodio.gitlens
 code --install-extension ecmel.vscode-html-css
 code --install-extension esbenp.prettier-vscode
 code --install-extension hashicorp.terraform
-code --install-extension ms-azuretools.vscode-docker
-code --install-extension ms-pyright.pyright
-code --install-extension redhat.vscode-yaml
 code --install-extension kokakiwi.vscode-just
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+code --install-extension ms-pyright.pyright
+code --install-extension pkief.material-product-icons
+code --install-extension redhat.vscode-yaml
 code --install-extension samuelcolvin.jinjahtml
 code --install-extension tamasfe.even-better-toml
-code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+code --install-extension tinkertrain.theme-panda
 
 scoop install `
     eza fastfetch figlet vim grep jq terraform `
