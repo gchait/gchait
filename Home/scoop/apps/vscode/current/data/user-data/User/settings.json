@@ -16,5 +16,6 @@
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "vs-kubernetes": {
         "vs-kubernetes.crd-code-completion": "disabled"
-    }
+    },
+    "dart.checkForSdkUpdates": false
 }
