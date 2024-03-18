@@ -25,10 +25,9 @@ code --install-extension tamasfe.even-better-toml
 code --install-extension tinkertrain.theme-panda
 
 scoop install `
-    eza fastfetch figlet vim grep jq terraform `
-    just kubectl mongosh vlc zip spotify helm python `
-    postgresql starship windows-terminal yq draw.io `
-    ccleaner rufus ripgrep gron dart@3.3.0 wget
+    eza fastfetch vim grep jq vlc zip spotify `
+    starship windows-terminal yq draw.io brave `
+    ccleaner rufus ripgrep gron wget
 
 Copy-Item -Path "$HOME\gchait\Home\*" -Destination "$HOME" -Recurse -Force
 scoop update -a
