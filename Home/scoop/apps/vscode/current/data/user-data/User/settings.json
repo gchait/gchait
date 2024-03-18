@@ -17,5 +17,8 @@
     "vs-kubernetes": {
         "vs-kubernetes.crd-code-completion": "disabled"
     },
-    "dart.checkForSdkUpdates": false
+    "dart.checkForSdkUpdates": false,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
