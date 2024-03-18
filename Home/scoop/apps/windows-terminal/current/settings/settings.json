@@ -16,6 +16,10 @@
             "keys": "ctrl+v"
         },
         {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
+        {
             "command": 
             {
                 "action": "splitPane",
@@ -23,16 +27,12 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
-        },
-        {
-            "command": "find",
-            "keys": "ctrl+shift+f"
         }
     ],
     "alwaysShowNotificationIcon": false,
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{9c6e5557-c8cb-4cdf-9c09-7e3c1c17649c}",
+    "defaultProfile": "{cdad9c82-b5c0-5b08-8cb1-317dd41e1b74}",
     "newTabMenu": 
     [
         {
@@ -57,11 +57,19 @@
         "list": 
         [
             {
+                "guid": "{cdad9c82-b5c0-5b08-8cb1-317dd41e1b74}",
+                "hidden": false,
+                "icon": "C:\\Users\\guyc\\gchait\\Static\\AlmaLinuxIcon.png",
+                "name": "Linux",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
                 "commandline": "%USERPROFILE%\\scoop\\apps\\git\\current\\usr\\bin\\bash.exe -li",
+                "elevate": false,
                 "guid": "{9c6e5557-c8cb-4cdf-9c09-7e3c1c17649c}",
                 "hidden": false,
-                "icon": "\ud83d\ude80",
-                "name": "Bash",
+                "icon": "C:\\Users\\guyc\\gchait\\Static\\WindowsIcon.jpg",
+                "name": "Windows",
                 "startingDirectory": "%USERPROFILE%"
             },
             {
