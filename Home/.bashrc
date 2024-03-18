@@ -9,9 +9,6 @@ alias ll="ls -l"
 alias lt="ls -T"
 alias df="df -hT"
 alias ff="fastfetch"
-alias j="just"
-alias d="docker"
-alias k="kubectl"
 
 shopt -s autocd
 shopt -s cdspell
@@ -22,7 +19,6 @@ shopt -s expand_aliases
 shopt -s checkwinsize
 
 bind "set completion-ignore-case on"
-test -f ~/.hidden_bashrc && . ~/.hidden_bashrc
 
 function set_title(){
     echo -ne "\033]0;$(basename "$PWD")\a"
