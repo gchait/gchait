@@ -1,0 +1,30 @@
+FROM python:3.11-alpine
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+ENV PIP_DISABLE_PIP_VERSION_CHECK 1
+
+ENV PORT 1234
+ENV APP_DIR /app
+ENV APP_USER someuser
+
+RUN adduser -DHs /sbin/nologin -h /home/${APP_USER} -g ${APP_USER} ${APP_USER}
+WORKDIR /tmp
+
+RUN apk add --update --no-cache --virtual ./build-deps \
+    build-base musl-dev zlib zlib-dev linux-headers
+
+RUN apk add --update --no-cache dep1 dep2
+COPY ./reqs.txt ./
+
+RUN pip install --no-cache-dir -r ./reqs.txt \
+    && apk del ./build-deps \
+    && rm -rf ./*
+
+WORKDIR ${APP_DIR}
+COPY . .
+
+USER ${APP_USER}
+EXPOSE ${PORT}
+
+CMD ["./run.sh"]
