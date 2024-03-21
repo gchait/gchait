@@ -5,10 +5,10 @@ ENV PYTHONUNBUFFERED 1
 ENV PIP_DISABLE_PIP_VERSION_CHECK 1
 
 ENV PORT 1234
-ENV APP_DIR /app
-ENV APP_USER someuser
+ENV APP_DIR /appdir
+ENV APP_USER appuser
 
-RUN adduser -DHs /sbin/nologin -h /home/${APP_USER} -g ${APP_USER} ${APP_USER}
+RUN adduser -DHs /sbin/nologin -g ${APP_USER} ${APP_USER}
 WORKDIR /tmp
 
 RUN apk add --update --no-cache --virtual ./build-deps \
