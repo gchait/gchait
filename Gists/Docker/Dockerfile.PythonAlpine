@@ -1,24 +1,19 @@
 FROM python:3.12-alpine
 
 ENV PORT 1234
-ENV WORKERS 123
-ENV THREADS 456
-
+ENV WORKERS 1234
+ENV THREADS 1234
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 ENV PIP_DISABLE_PIP_VERSION_CHECK 1
-
 ENV APP_DIR /appdir
 ENV APP_USER appuser
 
-RUN adduser -DHs /sbin/nologin -h /dev/null -g ${APP_USER} ${APP_USER}
-
-WORKDIR /tmp
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-
+RUN adduser -DHs /sbin/nologin -g ${APP_USER} ${APP_USER}
 WORKDIR ${APP_DIR}
+
 COPY . .
+RUN pip install --no-cache-dir -r requirements.txt
 
 USER ${APP_USER}
 EXPOSE ${PORT}
