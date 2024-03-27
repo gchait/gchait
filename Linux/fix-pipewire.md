@@ -1,11 +1,25 @@
 ```shell
-sudo mkdir -p /etc/wireplumber/main.lua.d
-sudo cp -a /usr/share/wireplumber/main.lua.d/50-alsa-config.lua /etc/wireplumber/main.lua.d/50-alsa-config.lua
-sudo vim /etc/wireplumber/main.lua.d/50-alsa-config.lua
+pactl list sinks | grep node.nick
+
+mkdir -p ~/.config/wireplumber/main.lua.d
+vim ~/.config/wireplumber/main.lua.d/51-alsa-custom.lua
 ```
-```shell
-["session.suspend-timeout-seconds"] = 0, -- default is 5
+```
+rule = {
+  matches = {
+    {
+      { "node.nick", "matches", "VG27A" },
+    },
+  },
+  apply_properties = {
+    ["session.suspend-timeout-seconds"] = 0
+  },
+}
+
+table.insert(alsa_monitor.rules, rule)
 ```
 ```shell
 systemctl --user restart wireplumber
+
+watch -cd -n .1 pactl list short sinks
 ```
