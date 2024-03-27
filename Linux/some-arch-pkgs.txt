@@ -1,3 +1,4 @@
+❯ pacman -Qe | cut -d" " -f1
 adobe-source-sans-fonts
 ark
 asciinema
@@ -5,9 +6,10 @@ asciiquarium
 base
 base-devel
 bind
-btop
 btrfs-progs
 cmatrix
+dart
+dbeaver
 docker
 docker-compose
 dolphin
@@ -15,7 +17,10 @@ efibootmgr
 egl-wayland
 eza
 fastfetch
+figlet
 firefox
+flatpak
+fwupd
 git
 gron
 gst-plugin-pipewire
@@ -26,9 +31,10 @@ intel-ucode
 iwd
 jq
 just
-kate
+kalk
 konsole
 kubectl
+libdbusmenu-glib
 libpulse
 libva-intel-driver
 libva-mesa-driver
@@ -39,6 +45,7 @@ nano
 neofetch
 okular
 openssh
+packagekit-qt6
 pipewire
 pipewire-alsa
 pipewire-jack
@@ -50,16 +57,24 @@ ripgrep
 sl
 smartmontools
 sof-firmware
+spectacle
+steam
 tree
 ttf-dejavu
 ttf-fira-code
+ttf-jetbrains-mono
+ttf-jetbrains-mono-nerd
 ttf-liberation
+ttf-meslo-nerd
+ttf-nerd-fonts-symbols-mono
 ttf-opensans
 ttf-roboto
 ttf-roboto-mono
 ttf-roboto-mono-nerd
 ttf-ubuntu-font-family
 vim
+visual-studio-code-bin
+visual-studio-code-bin-debug
 vulkan-intel
 vulkan-radeon
 wget
@@ -73,6 +88,7 @@ xf86-video-nouveau
 xf86-video-vmware
 xorg-xinit
 yq
+zenity
 zip
 zram-generator
 zsh
