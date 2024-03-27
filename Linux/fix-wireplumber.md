@@ -23,3 +23,17 @@ systemctl --user restart wireplumber
 
 watch -cd -n .1 pactl list short sinks
 ```
+
+Doesn't work?
+```shell
+vim /usr/share/wireplumber/scripts/node/suspend-node.lua
+```
+Change
+```
+tonumber(node.properties["session.suspend-timeout-seconds"]) or 5
+```
+to
+```
+tonumber(node.properties["session.suspend-timeout-seconds"]) or 0
+```
+and reboot. `rg session.suspend-timeout-seconds /usr/share/wireplumber` to find the right place if it's not there.
