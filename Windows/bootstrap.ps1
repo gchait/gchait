@@ -9,7 +9,6 @@ reg import "$HOME\scoop\apps\vscode\current\install-context.reg"
 reg import "$HOME\scoop\apps\vscode\current\install-associations.reg"
 
 code --install-extension catppuccin.catppuccin-vsc-icons
-code --install-extension dart-code.dart-code
 code --install-extension eamodio.gitlens
 code --install-extension ecmel.vscode-html-css
 code --install-extension esbenp.prettier-vscode
@@ -28,5 +27,5 @@ scoop install `
     eza fastfetch vim grep jq vlc zip spotify starship wget `
     windows-terminal yq draw.io ccleaner rufus ripgrep gron
 
-Copy-Item -Path "$HOME\gchait\Home\*" -Destination "$HOME" -Recurse -Force
+Copy-Item -Path "$HOME\gchait\Windows\Home\*" -Destination "$HOME" -Recurse -Force
 scoop update -a
