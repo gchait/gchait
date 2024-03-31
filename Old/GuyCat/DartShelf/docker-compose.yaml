@@ -1,0 +1,41 @@
+services:
+  api:
+    networks:
+      - guyc-at
+    build:
+      context: .
+      args:
+        - SRC
+        - PORT
+      platforms:
+        - "linux/amd64"
+        - "linux/arm64"
+    container_name: api
+    image: ${REPO}
+    restart: unless-stopped
+
+  caddy:
+    networks:
+      - guyc-at
+    image: caddy:2.7-alpine
+    container_name: caddy
+    restart: unless-stopped
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-localhost}
+      API_HOST: "api:${PORT}"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./site:/srv
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+networks:
+  guyc-at:
+    name: guyc-at

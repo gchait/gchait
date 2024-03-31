@@ -16,7 +16,7 @@ COPY Pipfile* .
 RUN pipenv sync
 
 FROM base
-RUN adduser -DHs /sbin/nologin -h /dev/null -g ${APP_USER} ${APP_USER}
+RUN adduser -DHs /sbin/nologin -g ${APP_USER} ${APP_USER}
 COPY --from=builder /.venv /.venv
 ENV PATH=/.venv/bin:$PATH
 WORKDIR ${APP_DIR}

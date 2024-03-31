@@ -1,4 +1,6 @@
-com.github.tchx84.Flatseal
-com.spotify.Client
-com.valvesoftware.Steam
-io.github.mimbrero.WhatsAppDesktop
+➜ flatpak list --app --columns=name,application
+Name                               Application ID
+Martin Abente Lahaye               com.github.tchx84.Flatseal
+Spotify                            com.spotify.Client
+Valve Corporation                  com.valvesoftware.Steam
+WhatsApp Desktop                   io.github.mimbrero.WhatsAppDesktop

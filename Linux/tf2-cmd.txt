@@ -1,0 +1,1 @@
+-novid -nojoy -nosteamcontroller -nohltv -particles 1 -precachefontchars -noquicktime -windowed -noborder

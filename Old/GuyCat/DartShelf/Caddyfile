@@ -1,0 +1,20 @@
+{
+	servers {
+		protocols h1 h2
+	}
+}
+
+{$SITE_ADDRESS} {
+	encode gzip
+	rewrite /favicon.ico /favicon.png
+
+	handle_path /api/* {
+		reverse_proxy {$API_HOST}
+	}
+
+	handle {
+		root * /srv
+		try_files {path} /index.html
+		file_server
+	}
+}
