@@ -3,9 +3,9 @@ th:hover {
 }
 
 th[data-dir="asc"]:after {
-  content: ' ↗';
+  content: " ↗";
 }
 
 th[data-dir="desc"]:after {
-  content: ' ↘';
+  content: " ↘";
 }
