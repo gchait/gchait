@@ -8,12 +8,10 @@ end
 
 config.color_scheme = "Panda (Gogh)"
 config.font = wezterm.font "Hack Nerd Font Mono"
-config.front_end = "WebGpu"
-config.webgpu_power_preference = "HighPerformance"
 
 config.background = {
   {
-    hsb = { brightness = 0.03 },
+    hsb = { brightness = 0.02 },
     source = { File = wallpapers[math.random(#wallpapers)] }
   }
 }
