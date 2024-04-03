@@ -1,3 +1,7 @@
+# ❯ dnf repoquery --qf '%{name}' --userinstalled \
+#   | grep -v -- '-debuginfo$' \
+#   | grep -v '^\(kernel-modules\|kernel\|kernel-core\|kernel-devel\)$'
+
 bash
 bind-utils
 binutils
@@ -34,9 +38,11 @@ libpcap
 libuser
 make
 man-db
+mongodb-mongosh-shared-openssl3
 nano
 ncurses
 neofetch
+nmap-ncat
 openssl
 openssl-pkcs11
 packer
@@ -54,6 +60,7 @@ rootfiles
 rsyslog
 session-manager-plugin
 sl
+sublime-text
 sudo
 systemd
 tar
