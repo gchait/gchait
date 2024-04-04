@@ -7,6 +7,7 @@ fpath+=($HOME/.zsh/pure)
 export EDITOR=vim
 export PAGER=more
 
+alias sudo="sudo "
 alias zyp="zypper"
 alias flat="flatpak"
 alias zypup="sudo zyp ref && sudo zyp dup -yl"
