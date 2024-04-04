@@ -11,7 +11,7 @@ config.font = wezterm.font "Hack Nerd Font Mono"
 
 config.background = {
   {
-    hsb = { brightness = 0.02 },
+    hsb = { brightness = 0.01 },
     source = { File = wallpapers[math.random(#wallpapers)] }
   }
 }
