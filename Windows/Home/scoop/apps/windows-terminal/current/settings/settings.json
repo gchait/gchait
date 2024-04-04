@@ -51,7 +51,7 @@
       {
         "guid": "{cdad9c82-b5c0-5b08-8cb1-317dd41e1b74}",
         "hidden": false,
-        "icon": "%USERPROFILE%\\gchait\\Linux\\AlmaLinuxIcon.png",
+        "icon": "%USERPROFILE%\\gchait\\Static\\Images\\AlmaLinuxIcon.png",
         "name": "Linux",
         "source": "Windows.Terminal.Wsl"
       },
@@ -60,7 +60,7 @@
         "elevate": false,
         "guid": "{9c6e5557-c8cb-4cdf-9c09-7e3c1c17649c}",
         "hidden": false,
-        "icon": "%USERPROFILE%\\gchait\\Windows\\WindowsIcon.jpg",
+        "icon": "%USERPROFILE%\\gchait\\Static\\Images\\WindowsIcon.jpg",
         "name": "Windows",
         "startingDirectory": "%USERPROFILE%"
       },
