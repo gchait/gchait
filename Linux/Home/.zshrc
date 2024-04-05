@@ -10,9 +10,7 @@ export PAGER=more
 alias sudo="sudo "
 alias zyp="zypper"
 alias flat="flatpak"
-alias zypup="sudo zyp ref && sudo zyp dup -yl"
-alias flatup="sudo flat update -y && sudo flat uninstall --unused -y"
-alias update="zypup && flatup"
+alias update="~/.update.sh"
 
 alias ls="eza -a --group-directories-first"
 alias ll="ls -l"
