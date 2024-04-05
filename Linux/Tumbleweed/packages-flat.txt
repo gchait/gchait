@@ -1,0 +1,4 @@
+com.github.tchx84.Flatseal
+com.spotify.Client
+com.valvesoftware.Steam
+io.github.mimbrero.WhatsAppDesktop
