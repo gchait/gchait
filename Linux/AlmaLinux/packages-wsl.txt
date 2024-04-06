@@ -56,7 +56,6 @@ rootfiles
 rsyslog
 session-manager-plugin
 sl
-sublime-text
 sudo
 systemd
 tar
@@ -75,5 +74,4 @@ xz
 yum
 yum-utils
 zip
-zsh-autosuggestions
-zsh-syntax-highlighting
+zsh
