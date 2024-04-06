@@ -8,6 +8,8 @@ CursorShape=1
 [General]
 Name=Guy
 Parent=FALLBACK/
+TerminalColumns=120
+TerminalRows=30
 
 [Scrolling]
 HighlightScrolledLines=false
