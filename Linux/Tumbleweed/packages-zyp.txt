@@ -1,4 +1,5 @@
 ansible
+asciinema
 avahi-utils
 code
 cups
@@ -9,6 +10,7 @@ eza
 fastfetch
 fetchmsttfonts
 figlet
+gdm
 git
 gstreamer
 gstreamer-libnice
