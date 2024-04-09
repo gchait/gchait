@@ -19,5 +19,8 @@
   "extensions.ignoreRecommendations": true,
   "vs-kubernetes": {
     "vs-kubernetes.crd-code-completion": "disabled"
+  },
+  "[jinja-html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
   }
 }
