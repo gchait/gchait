@@ -1,6 +1,6 @@
 [Appearance]
 ColorScheme=Snazzy
-Font=Hack Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+Font=Mononoki Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [Cursor Options]
 CursorShape=1

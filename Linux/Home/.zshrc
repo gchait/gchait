@@ -1,4 +1,5 @@
 SAVEHIST=1500
+SAVEHIST=1500
 HISTFILE=~/.zsh_history
 
 zle_highlight=("paste:none")
@@ -9,6 +10,7 @@ export PAGER=more
 
 alias sudo="sudo "
 alias flat="flatpak"
+alias zyp="zypper"
 alias zyp="zypper"
 alias ff="fastfetch -c paleofetch.jsonc"
 alias ls="eza -a --group-directories-first"
@@ -26,14 +28,14 @@ update() {
         sudo zypper ref
         sudo zypper dup -yl
     fi
-    
+
     if command -v flatpak; then
         flatpak update -y
         flatpak uninstall --unused -y
     fi
-    
+
     if command -v scoop; then
-        scoop update -a
+        scoop update -a &> /dev/null
     fi
 }
 
