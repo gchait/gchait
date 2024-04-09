@@ -1,4 +1,4 @@
-SAVEHIST=1000
+SAVEHIST=1500
 HISTFILE=~/.zsh_history
 
 zle_highlight=("paste:none")
@@ -8,9 +8,8 @@ export EDITOR=vim
 export PAGER=more
 
 alias sudo="sudo "
-alias zyp="zypper"
 alias flat="flatpak"
-alias update="~/.update.sh"
+alias zyp="zypper"
 alias ff="fastfetch -c paleofetch.jsonc"
 alias ls="eza -a --group-directories-first"
 alias ll="ls -l"
@@ -21,6 +20,22 @@ alias d="docker"
 alias k="kubectl"
 alias c="code"
 alias g="git"
+
+update() {
+    if command -v zypper; then
+        sudo zypper ref
+        sudo zypper dup -yl
+    fi
+    
+    if command -v flatpak; then
+        flatpak update -y
+        flatpak uninstall --unused -y
+    fi
+    
+    if command -v scoop; then
+        scoop update -a
+    fi
+}
 
 [[ -f ~/.hidden_zshrc ]] && source ~/.hidden_zshrc
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
