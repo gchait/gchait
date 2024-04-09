@@ -1,5 +1,4 @@
 SAVEHIST=1500
-SAVEHIST=1500
 HISTFILE=~/.zsh_history
 
 zle_highlight=("paste:none")
@@ -10,7 +9,6 @@ export PAGER=more
 
 alias sudo="sudo "
 alias flat="flatpak"
-alias zyp="zypper"
 alias zyp="zypper"
 alias ff="fastfetch -c paleofetch.jsonc"
 alias ls="eza -a --group-directories-first"
