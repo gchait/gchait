@@ -49,11 +49,13 @@
     },
     "list": [
       {
+        "commandline": "C:\\Windows\\System32\\wsl.exe",
+        "elevate": false,
         "guid": "{cdad9c82-b5c0-5b08-8cb1-317dd41e1b74}",
         "hidden": false,
         "icon": "%USERPROFILE%\\gchait\\Static\\Images\\TumbleweedIcon.png",
         "name": "Linux",
-        "source": "Windows.Terminal.Wsl"
+        "startingDirectory": "~"
       },
       {
         "commandline": "%USERPROFILE%\\scoop\\apps\\git\\current\\usr\\bin\\bash.exe -li",
