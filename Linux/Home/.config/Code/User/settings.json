@@ -10,6 +10,7 @@
   "files.eol": "\n",
   "git.enableSmartCommit": true,
   "explorer.confirmDragAndDrop": false,
+  "editor.stickyScroll.enabled": false,
   "redhat.telemetry.enabled": false,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
