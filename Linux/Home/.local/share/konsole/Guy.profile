@@ -6,6 +6,7 @@ Font=Mononoki Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 CursorShape=1
 
 [General]
+Command=/usr/bin/zsh
 Name=Guy
 Parent=FALLBACK/
 TerminalColumns=120

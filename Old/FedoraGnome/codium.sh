@@ -1,5 +1,4 @@
 #!/bin/sh
-# codium --list-extensions | awk '{print "codium --install-extension " $0}'
 
 codium --install-extension bungcip.better-toml
 codium --install-extension Catppuccin.catppuccin-vsc-icons

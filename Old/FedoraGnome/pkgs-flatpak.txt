@@ -1,6 +1,4 @@
-~/gchait main* ❯ flatpak list --app --columns=name,application
-Name                           Application ID
-Discord                        com.discordapp.Discord
-Extension Manager              com.mattjakeman.ExtensionManager
-Spotify                        com.spotify.Client
-WhatsApp Desktop               io.github.mimbrero.WhatsAppDesktop
+com.discordapp.Discord
+com.mattjakeman.ExtensionManager
+com.spotify.Client
+io.github.mimbrero.WhatsAppDesktop

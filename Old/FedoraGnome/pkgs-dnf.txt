@@ -1,4 +1,3 @@
-~/gchait main* ❯ dnf repoquery --qf '%{name}' --userinstalled | grep -v -- '-debuginfo$' | grep -v '^kernel'
 aajohan-comfortaa-fonts
 adw-gtk3-theme
 alef-fonts
