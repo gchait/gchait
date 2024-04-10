@@ -62,7 +62,7 @@
         "elevate": false,
         "guid": "{9c6e5557-c8cb-4cdf-9c09-7e3c1c17649c}",
         "hidden": false,
-        "icon": "%USERPROFILE%\\gchait\\Static\\Images\\WindowsIcon.jpg",
+        "icon": "%USERPROFILE%\\gchait\\Static\\Images\\WindowsIcon.png",
         "name": "Windows",
         "startingDirectory": "%USERPROFILE%"
       },
