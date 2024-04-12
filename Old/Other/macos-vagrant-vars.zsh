@@ -10,7 +10,7 @@ CALC_CPU=$(expr $(system_profiler SPHardwareDataType | \
 
 
 export GIT_NAME="Guy Chait"
-export GIT_EMAIL=""
+export GIT_EMAIL="53366531+gchait@users.noreply.github.com"
 
 export DISK_GB=200
 export PORT_TCP=8080

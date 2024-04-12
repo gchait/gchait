@@ -7,7 +7,7 @@ newrelic-prometheus-agent:
       - job_name: msk
         static_configs:
           - targets:
-              %{ for broker in brokers ~}
+              # %{ for broker in brokers ~}
               - ${broker}:${jmx_exporter_port}
               - ${broker}:${node_exporter_port}
-              %{ endfor ~}
+              # %{ endfor ~}

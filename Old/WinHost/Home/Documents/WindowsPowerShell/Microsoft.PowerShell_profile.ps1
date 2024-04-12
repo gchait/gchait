@@ -7,7 +7,7 @@ $calcCpu = (Get-WmiObject -Class Win32_Processor | `
     Measure-Object -Property NumberOfCores -Sum).Sum
 
 $env:GIT_NAME = "Guy Chait"
-$env:GIT_EMAIL = ""
+$env:GIT_EMAIL = "53366531+gchait@users.noreply.github.com"
 
 $env:DISK_GB = 200
 $env:PORT_TCP = 8080

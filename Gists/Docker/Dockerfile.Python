@@ -4,7 +4,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 ENV PIP_DISABLE_PIP_VERSION_CHECK 1
 
-ENV PORT 1234
+ENV PORT 8080
 ENV APP_DIR /appdir
 ENV APP_USER appuser
 
@@ -14,7 +14,7 @@ WORKDIR /tmp
 RUN apk add --update --no-cache --virtual ./build-deps \
     build-base musl-dev zlib zlib-dev linux-headers
 
-RUN apk add --update --no-cache dep1 dep2
+RUN apk add --update --no-cache curl
 COPY ./reqs.txt ./
 
 RUN pip install --no-cache-dir -r ./reqs.txt \

@@ -19,11 +19,11 @@ services:
   db:
     image: postgres:alpine
     volumes:
-      - dev-db-data:/var/lib/postgresql/data
+      - pg_data:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: devdb
       POSTGRES_USER: devuser
       POSTGRES_PASSWORD: changeme
 
 volumes:
-  dev-db-data:
+  pg_data:
