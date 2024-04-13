@@ -5,6 +5,7 @@ code
 cups
 curl
 docker
+docker-buildx
 docker-compose
 eza
 fastfetch
@@ -12,9 +13,12 @@ fetchmsttfonts
 figlet
 gdm
 git
+helm
 jq
 just
+kubernetes-client
 kwrite
+minikube
 neofetch
 opi
 rclone
