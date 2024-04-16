@@ -42,9 +42,9 @@
       "closeOnExit": "always",
       "colorScheme": "Snazzy",
       "font": {
-        "face": "Hack Nerd Font Mono"
+        "face": "Mononoki Nerd Font"
       },
-      "opacity": 90,
+      "opacity": 92,
       "useAcrylic": true
     },
     "list": [
@@ -53,7 +53,7 @@
         "elevate": false,
         "guid": "{cdad9c82-b5c0-5b08-8cb1-317dd41e1b74}",
         "hidden": false,
-        "icon": "%USERPROFILE%\\gchait\\Static\\Images\\TumbleweedIcon.png",
+        "icon": "%USERPROFILE%\\gchait\\Static\\Icons\\Tumbleweed.png",
         "name": "Linux",
         "startingDirectory": "~"
       },
@@ -62,7 +62,7 @@
         "elevate": false,
         "guid": "{9c6e5557-c8cb-4cdf-9c09-7e3c1c17649c}",
         "hidden": false,
-        "icon": "%USERPROFILE%\\gchait\\Static\\Images\\WindowsIcon.png",
+        "icon": "%USERPROFILE%\\gchait\\Static\\Icons\\Windows.png",
         "name": "Windows",
         "startingDirectory": "%USERPROFILE%"
       },

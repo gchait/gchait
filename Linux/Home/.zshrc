@@ -7,8 +7,6 @@ fpath+=($HOME/.zsh/pure)
 export EDITOR=vim
 export PAGER=more
 
-alias sudo="sudo "
-alias flat="flatpak"
 alias zyp="zypper"
 alias ff="fastfetch -c paleofetch.jsonc"
 alias ls="eza -a --group-directories-first"
@@ -23,8 +21,8 @@ alias g="git"
 
 update() {
     if command -v zypper; then
-        sudo zypper ref
-        sudo zypper dup -yl
+        zypper ref
+        zypper dup -yl
     fi
 
     if command -v flatpak; then
@@ -36,7 +34,9 @@ update() {
         scoop update -a &> /dev/null
     fi
 
-    git -C ~/gchait pull
+    if cd ~/gchait; then
+        git pull
+    fi
 }
 
 [[ -f ~/.hidden_zshrc ]] && source ~/.hidden_zshrc

@@ -1,34 +1,10 @@
-#!/usr/bin/zsh -e
-
 [[ -f ~/.hidden_zshrc ]] && source ~/.hidden_zshrc
-mkdir -p ~/.zsh
-set -x
 
-apps() {
-    sudo wget -qO /usr/local/bin/pfetch \
-        "https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch"
-    sudo chmod +x /usr/local/bin/pfetch
-}
+zypper in steam-devices system-config-printer opi gdm \
+    fetchmsttfonts cups avahi-utils code rclone kwrite
 
-zsh_plugs() {
-    if cd ~/.zsh/pure; then
-        git pull
-    else
-        git clone https://github.com/sindresorhus/pure.git ~/.zsh/pure
-    fi
-
-    if cd ~/.zsh/zsh-syntax-highlighting; then
-        git pull
-    else
-        git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
-    fi
-
-    if cd ~/.zsh/zsh-autosuggestions; then
-        git pull
-    else
-        git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-    fi
-}
+flatpak install com.github.tchx84.Flatseal com.spotify.Client \
+    com.valvesoftware.Steam io.github.mimbrero.WhatsAppDesktop
 
 code_exts() {
     code --install-extension catppuccin.catppuccin-vsc-icons
@@ -47,6 +23,4 @@ code_exts() {
     code --install-extension tinkertrain.theme-panda
 }
 
-apps
-zsh_plugs
 code_exts > /dev/null
