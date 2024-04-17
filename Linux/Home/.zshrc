@@ -34,9 +34,7 @@ update() {
         scoop update -a &> /dev/null
     fi
 
-    if cd ~/gchait; then
-        git pull
-    fi
+    git -C ~/gchait pull
 }
 
 [[ -f ~/.hidden_zshrc ]] && source ~/.hidden_zshrc
