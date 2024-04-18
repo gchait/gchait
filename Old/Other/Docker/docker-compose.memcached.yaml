@@ -1,0 +1,8 @@
+---
+services:
+  memcached:
+    image: bitnami/memcached:1.6.17
+    hostname: memcached
+    container_name: memcached
+    #    ports:
+    #      - "11211:11211"
