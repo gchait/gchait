@@ -6,5 +6,5 @@ scoop install git
 git clone https://github.com/gchait/gchait.git
 
 winget install --id Microsoft.Powershell --source winget
-pwsh ~/gchait/Windows/bootstrap.ps1
+pwsh "$HOME\gchait\Windows\bootstrap.ps1"
 ```
