@@ -1,7 +1,7 @@
 [[ -f ~/.hidden_zshrc ]] && source ~/.hidden_zshrc
 
-zypper in steam-devices system-config-printer opi gdm \
-    fetchmsttfonts cups avahi-utils code rclone kwrite
+zypper in steam-devices system-config-printer opi \
+    fetchmsttfonts cups avahi-utils code rclone gdm
 
 flatpak install com.github.tchx84.Flatseal com.spotify.Client \
     com.valvesoftware.Steam io.github.mimbrero.WhatsAppDesktop

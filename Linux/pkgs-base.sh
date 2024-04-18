@@ -1,5 +1,5 @@
 zypper in asciinema docker docker-buildx docker-compose \
-    eza fastfetch figlet yq git helm jq just kubernetes-client \
+    eza fastfetch figlet yq helm jq just kubernetes-client \
     minikube neofetch ripgrep tree vim wget zsh
 
 wget -qO /usr/local/bin/pfetch \
