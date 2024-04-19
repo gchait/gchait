@@ -1,4 +1,6 @@
-zypper rm -y "*yast*" "*ruby*"
+#!/bin/sh -ex
+
+zypper rm -y "*yast*" "*ruby*" || true
 
 zypper in -y \
     asciinema docker docker-buildx docker-compose vim wget \

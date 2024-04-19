@@ -1,3 +1,5 @@
+#!/bin/sh -ex
+
 [[ -f ~/.hidden_zshrc ]] && source ~/.hidden_zshrc
 
 zypper in -y cups system-config-printer opi fetchmsttfonts code gdm
@@ -26,5 +28,7 @@ code_exts() {
 
 code_exts > /dev/null
 
+set +x
+echo
 echo "To change display manager:"
 echo "update-alternatives --config default-displaymanager"
