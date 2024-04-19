@@ -13,6 +13,7 @@ alias ls="eza -a --group-directories-first"
 alias ll="ls -l"
 alias lt="ls -T"
 alias df="df -hT"
+alias du="du -sh"
 alias j="just"
 alias d="docker"
 alias k="kubectl"
@@ -20,21 +21,14 @@ alias c="code"
 alias g="git"
 
 update() {
-    if command -v zypper; then
-        zypper ref
-        zypper dup -yl
-    fi
+    git -C ~/gchait pull
 
-    if command -v flatpak; then
-        flatpak update -y
-        flatpak uninstall --unused -y
-    fi
+    zypper ref
+    zypper dup -yl
 
     if command -v scoop; then
         scoop update -a &> /dev/null
     fi
-
-    git -C ~/gchait pull
 }
 
 [[ -f ~/.hidden_zshrc ]] && source ~/.hidden_zshrc

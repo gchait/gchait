@@ -2,8 +2,8 @@
 
 zypper in -y cups system-config-printer opi fetchmsttfonts code gdm
 opi codecs
-flatpak install com.spotify.Client io.github.mimbrero.WhatsAppDesktop
 
+# flatpak install com.spotify.Client io.github.mimbrero.WhatsAppDesktop
 # zypper in -y rclone steam-devices
 # flatpak install com.github.tchx84.Flatseal com.valvesoftware.Steam
 
