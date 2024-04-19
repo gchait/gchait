@@ -23,5 +23,6 @@
   },
   "[jinja-html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
-  }
+  },
+  "explorer.confirmPasteNative": false
 }

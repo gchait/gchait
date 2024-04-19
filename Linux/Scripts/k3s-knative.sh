@@ -15,4 +15,5 @@ kubectl apply -f "${NET_CONTOUR_RELEASES}/download/knative-v${NET_CONTOUR_VERSIO
 kubectl patch cm -n knative-serving config-network --type merge \
   --patch '{"data":{"ingress-class":"contour.ingress.networking.knative.dev"}}'
 
-echo "The kubeconfig is available at '/etc/rancher/k3s/k3s.yaml'."
+echo "To use this cluster:"
+echo "export KUBECONFIG=/etc/rancher/k3s/k3s.yaml"
