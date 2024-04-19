@@ -1,6 +1,6 @@
 zypper rm -y "*yast*" "*ruby*"
 
-zypper in asciinema docker docker-buildx docker-compose \
+zypper in -y asciinema docker docker-buildx docker-compose \
     eza fastfetch figlet yq helm jq just kubernetes-client \
     minikube neofetch ripgrep tree vim wget zsh
 
