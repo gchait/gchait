@@ -2,7 +2,7 @@ zypper rm -y "*yast*" "*ruby*"
 
 zypper in -y asciinema docker docker-buildx docker-compose \
     eza fastfetch figlet yq helm jq just kubernetes-client \
-    minikube neofetch ripgrep tree vim wget zsh
+    neofetch ripgrep tree vim wget zsh
 
 wget -qO /usr/local/bin/pfetch \
     "https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch"
