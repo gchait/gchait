@@ -1,10 +1,11 @@
 [[ -f ~/.hidden_zshrc ]] && source ~/.hidden_zshrc
 
-zypper in steam-devices system-config-printer opi \
-    fetchmsttfonts cups avahi-utils code rclone gdm
+zypper in -y cups system-config-printer opi fetchmsttfonts code gdm
+opi codecs
+flatpak install com.spotify.Client io.github.mimbrero.WhatsAppDesktop
 
-flatpak install com.github.tchx84.Flatseal com.spotify.Client \
-    com.valvesoftware.Steam io.github.mimbrero.WhatsAppDesktop
+# zypper in -y rclone steam-devices
+# flatpak install com.github.tchx84.Flatseal com.valvesoftware.Steam
 
 code_exts() {
     code --install-extension catppuccin.catppuccin-vsc-icons
@@ -24,3 +25,6 @@ code_exts() {
 }
 
 code_exts > /dev/null
+
+echo "To change display manager:"
+echo "update-alternatives --config default-displaymanager"

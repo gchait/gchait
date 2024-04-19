@@ -1,3 +1,5 @@
+winget install --id Microsoft.Powershell --source winget
+
 scoop bucket add extras
 scoop install vscode
 
