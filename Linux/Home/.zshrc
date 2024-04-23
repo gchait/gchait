@@ -7,13 +7,14 @@ fpath+=($HOME/.zsh/pure)
 export EDITOR=vim
 export PAGER=more
 
-alias zyp="zypper"
 alias ff="fastfetch -c paleofetch.jsonc"
 alias ls="eza -a --group-directories-first"
 alias ll="ls -l"
 alias lt="ls -T"
 alias df="df -hT"
 alias du="du -sh"
+
+alias zyp="zypper"
 alias j="just"
 alias d="docker"
 alias k="kubectl"
@@ -47,3 +48,4 @@ zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
 
 autoload -U promptinit && promptinit
 prompt pure
+prompt_pure_state[username]=
