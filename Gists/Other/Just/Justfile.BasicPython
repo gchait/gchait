@@ -1,33 +1,28 @@
 set dotenv-load
-alias q := quick
 
+# Bugged when reaching an exact whole number, e.g. `5`. Take care!
 NEXT_VERSION := ```
 	yq ".appVersion" ${YAML_CONFIG} | \
 	python3 -c "print(round(float(input()) + 0.01, 2))"
 	```
 
 local: test build run finalize
-remote: bump tag login push finalize
+quick: build run finalize
+remote: bump tag push finalize
 remote-only: test build remote
 
 stop:
 	docker compose down
 
-quick:
-  docker compose up allinone --build
-
 test:
-	#!/bin/bash
-	set -euo pipefail
-	python -m venv ./.venv
-	. ./.venv/bin/activate
-	set -x
-	pip install -q -r ./reqs.dev.txt -r ./reqs.txt
-	isort "${PY_SRC}" > /dev/null
-	black "${PY_SRC}" 2> /dev/null
-	flake8 --max-line-length 90 "${PY_SRC}"
-	pylint "${PY_SRC}"
-	bandit -r "${PY_SRC}"
+	python3 -m venv .venv
+	source $(find .venv -type f -name activate)
+	.venv/bin/pip install -qr reqs.dev.txt
+	.venv/bin/python -m isort --profile=black -q ${PY_SRC}
+	.venv/bin/python -m black -q ${PY_SRC}
+	.venv/bin/python -m flake8 --max-line-length=${MAX_LINE_LEN} ${PY_SRC}
+	.venv/bin/python -m pylint --max-locals=${MAX_LOCALS} ${PY_SRC}
+	.venv/bin/python -m bandit -qr ${PY_SRC}
 
 build:
 	docker compose build
@@ -36,7 +31,7 @@ run:
 	docker compose up -d
 
 bump:
-	yq ".appVersion = {{NEXT_VERSION}}" ${YAML_CONFIG} > ${YAML_CONFIG}.tmp
+	yq -P ".appVersion = {{NEXT_VERSION}}" ${YAML_CONFIG} > ${YAML_CONFIG}.tmp
 	mv ${YAML_CONFIG}.tmp ${YAML_CONFIG}
 
 tag:
@@ -47,14 +42,15 @@ login:
 	aws ecr get-login-password --region ${AWS_REGION} | docker login \
 		--username AWS --password-stdin ${REGISTRY} &> /dev/null
 
-push:
+push: login
 	#!/bin/bash
-	set -exuo pipefail
+	set -euo pipefail
+	read -p "Enter the commit message: " commit_message
+	set -x
 	docker push ${REMOTE_REPO}:v{{NEXT_VERSION}}
 	docker push ${REMOTE_REPO}:latest
 	docker rmi ${REMOTE_REPO}:v{{NEXT_VERSION}}
 	docker rmi ${REMOTE_REPO}:latest
-	read -p "Enter the commit message: " commit_message
 	git add -A
 	git commit -m "${commit_message}"
 	git push origin
