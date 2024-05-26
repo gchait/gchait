@@ -25,7 +25,7 @@ update() {
     git -C ~/gchait pull
 
     zypper ref
-    zypper dup -yl
+    zypper dup -yl | grep -v "for more information"
 
     if command -v scoop; then
         scoop update -a &> /dev/null
