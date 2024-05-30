@@ -1,4 +1,5 @@
-#!/bin/sh -ex
+#!/bin/sh
+set -euxo pipefail
 
 get_executable() {
     wget -qO "$1" "$2"
