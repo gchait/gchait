@@ -11,15 +11,14 @@ get_repo() {
 }
 
 cp -r ~/gchait/Linux/Home/.* ~/
-cp -r ~/gchait/Linux/Zypp/* /etc/zypp/
+cp -r ~/gchait/Linux/zypp.conf /etc/zypp/
 mkdir -p ~/.zsh
 
 zypper rm -y "*yast*" "*ruby*" 2> /dev/null || true
 
 zypper in -y \
-    asciinema docker docker-buildx docker-compose vim wget \
-    zsh neofetch eza fastfetch figlet yq helm jq just ripgrep \
-    tree kubernetes-client netcat bind-utils gron
+    asciinema docker docker-buildx docker-compose vim wget bind-utils gron \
+    zsh neofetch eza fastfetch figlet yq helm jq just ripgrep netcat-openbsd
 
 get_executable /usr/local/bin/pfetch \
     "https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch"
