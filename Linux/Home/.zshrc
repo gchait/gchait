@@ -10,7 +10,7 @@ export PAGER=more
 alias ff="fastfetch -c paleofetch.jsonc"
 alias ls="eza -a --group-directories-first"
 alias ll="ls -l"
-alias lt="ls -T"
+alias lt="ls -T --git-ignore"
 alias df="df -hT"
 alias du="du -sh"
 
