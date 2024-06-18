@@ -16,9 +16,13 @@ mkdir -p ~/.zsh
 
 zypper rm -y "*yast*" "*ruby*" 2> /dev/null || true
 
+zypper addrepo https://yum.corretto.aws/corretto.repo 2> /dev/null || true
+zypper ref
+
 zypper in -y \
-    asciinema docker docker-buildx docker-compose vim wget bind-utils gron \
-    zsh neofetch eza fastfetch figlet yq helm jq just ripgrep netcat-openbsd
+    docker docker-buildx docker-compose vim netcat-openbsd \
+    zsh neofetch eza fastfetch figlet yq just ripgrep asciinema \
+    java-21-amazon-corretto-devel wget bind-utils gron helm jq
 
 get_executable /usr/local/bin/pfetch \
     "https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch"
