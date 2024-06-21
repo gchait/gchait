@@ -1,0 +1,30 @@
+{
+  "files.autoSave": "onFocusChange",
+  "editor.fontFamily": "Hack Nerd Font Mono",
+  "workbench.startupEditor": "none",
+  "explorer.confirmDelete": false,
+  "workbench.productIconTheme": "material-product-icons",
+  "workbench.iconTheme": "catppuccin-macchiato",
+  "workbench.colorTheme": "Panda Syntax",
+  "editor.fontLigatures": true,
+  "files.eol": "\n",
+  "git.enableSmartCommit": true,
+  "explorer.confirmDragAndDrop": false,
+  "editor.stickyScroll.enabled": false,
+  "redhat.telemetry.enabled": false,
+  "terminal.integrated.defaultProfile.windows": "Zsh",
+  "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "git.autofetch": true,
+  "window.menuBarVisibility": "toggle",
+  "extensions.ignoreRecommendations": true,
+  "vs-kubernetes": {"vs-kubernetes.crd-code-completion": "disabled"},
+  "[jinja-html]": {"editor.defaultFormatter": "vscode.html-language-features"},
+  "explorer.confirmPasteNative": false,
+  "terminal.integrated.profiles.windows": {
+    "Zsh": {
+      "path": "C:\\Users\\Guy\\scoop\\apps\\git\\current\\usr\\bin\\zsh.exe",
+      "args": ["-li"]
+    }
+  }
+}
