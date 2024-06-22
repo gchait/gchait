@@ -1,7 +1,0 @@
-"$schema" = 'https://starship.rs/config-schema.json'
-
-[directory]
-use_os_path_sep = false
-
-[aws]
-disabled = true
