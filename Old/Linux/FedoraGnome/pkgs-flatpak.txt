@@ -1,4 +1,0 @@
-com.discordapp.Discord
-com.mattjakeman.ExtensionManager
-com.spotify.Client
-io.github.mimbrero.WhatsAppDesktop

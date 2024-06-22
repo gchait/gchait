@@ -1,9 +1,0 @@
-alias pac='sudo pacman -S'                              # install
-alias pacu='sudo pacman -Syu'                           # update
-alias pacr='sudo pacman -Rs'                            # remove
-alias pacs='pacman -Ss'                                 # search
-alias paci='pacman -Si'                                 # info
-alias paclo='pacman -Qdt'                               # list orphans
-alias pacro='paclo && sudo pacman -Rns $(pacman -Qtdq)' # remove orphans
-alias pacc='pacman -Scc'                                # clean cache
-alias paclf='pacman -Ql'                                # list files

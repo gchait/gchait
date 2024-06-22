@@ -1,9 +1,0 @@
-[rpmfusion-nonfree-steam]
-name=RPM Fusion for Fedora $releasever - Nonfree - Steam
-metalink=https://mirrors.rpmfusion.org/metalink?repo=nonfree-fedora-steam-$releasever&arch=$basearch
-enabled=1
-type=rpm-md
-gpgcheck=1
-repo_gpgcheck=0
-gpgkey=file:///usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-nonfree-fedora-$releasever
-skip_if_unavailable=True
