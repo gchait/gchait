@@ -23,6 +23,10 @@ alias k="kubectl"
 alias c="code"
 alias g="git"
 
+function precmd () {
+  echo -ne "\033]0;${PWD##*/}\007"
+}
+
 bindkey -e
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
