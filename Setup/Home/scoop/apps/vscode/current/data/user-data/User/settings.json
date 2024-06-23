@@ -23,7 +23,7 @@
   "explorer.confirmPasteNative": false,
   "terminal.integrated.profiles.windows": {
     "Zsh": {
-      "path": "C:\\Users\\Guy\\scoop\\apps\\git\\current\\usr\\bin\\zsh.exe",
+      "path": "C:\\Users\\${env:USERNAME}\\scoop\\apps\\git\\current\\usr\\bin\\zsh.exe",
       "args": ["-li"]
     }
   }
