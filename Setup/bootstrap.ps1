@@ -1,3 +1,4 @@
+scoop update -a
 scoop bucket add extras
 
 scoop install `
@@ -5,8 +6,8 @@ scoop install `
     rufus just windows-terminal draw.io gron vlc `
     ccleaner kubectl helm wget zip ripgrep
 
-reg import "$HOME\scoop\apps\vscode\current\install-context.reg"
-reg import "$HOME\scoop\apps\vscode\current\install-associations.reg"
+reg import "${HOME}\scoop\apps\vscode\current\install-context.reg"
+reg import "${HOME}\scoop\apps\vscode\current\install-associations.reg"
 
 code --install-extension catppuccin.catppuccin-vsc-icons
 code --install-extension eamodio.gitlens
@@ -23,9 +24,9 @@ code --install-extension samuelcolvin.jinjahtml
 code --install-extension tamasfe.even-better-toml
 code --install-extension tinkertrain.theme-panda
 
-Copy-Item -Path "$HOME\gchait\Setup\Home\*" -Destination "$HOME" -Recurse -Force
-scoop update -a
+Copy-Item -Recurse -Force `
+    -Path "${HOME}\gchait\Setup\Home\*" -Destination "${HOME}"
 
 Start-Process -Wait -NoNewWindow `
-    -FilePath "$HOME\scoop\apps\git\current\usr\bin\bash.exe" `
+    -FilePath "${HOME}\scoop\apps\git\current\usr\bin\bash.exe" `
     -ArgumentList '-l ~/gchait/Setup/bootstrap.sh'

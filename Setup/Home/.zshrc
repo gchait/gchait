@@ -2,8 +2,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+function precmd () {
+  echo -ne "\033]0;${PWD##*/}\007"
+}
+
 SAVEHIST="1500"
 HISTFILE="${HOME}/.zsh_history"
+
+fpath=("${HOME}/.zsh/complete/src" ${fpath})
 zle_highlight=("paste:none")
 
 export EDITOR="vim"
@@ -22,10 +28,6 @@ alias d="docker"
 alias k="kubectl"
 alias c="code"
 alias g="git"
-
-function precmd () {
-  echo -ne "\033]0;${PWD##*/}\007"
-}
 
 bindkey -e
 bindkey "^[[1;5C" forward-word
