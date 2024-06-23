@@ -1,10 +1,9 @@
 scoop bucket add extras
-scoop bucket add java
 
 scoop install `
-    eza wget fastfetch vim grep spotify jq yq vscode `
-    rufus just ripgrep windows-terminal draw.io gron vlc `
-    ccleaner kubectl helm istioctl zip corretto17-jdk
+    eza fastfetch vim grep spotify jq yq vscode `
+    rufus just windows-terminal draw.io gron vlc `
+    ccleaner kubectl helm wget zip ripgrep
 
 reg import "$HOME\scoop\apps\vscode\current\install-context.reg"
 reg import "$HOME\scoop\apps\vscode\current\install-associations.reg"
