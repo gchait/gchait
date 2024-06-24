@@ -8,6 +8,7 @@
 
   "git.autofetch": true,
   "git.enableSmartCommit": true,
+  "git.confirmSync": false,
 
   "files.autoSave": "onFocusChange",
   "files.eol": "\n",
