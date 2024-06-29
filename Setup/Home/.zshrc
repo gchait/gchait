@@ -6,11 +6,12 @@ function precmd () {
   echo -ne "\033]0;${PWD##*/}\007"
 }
 
-SAVEHIST="1500"
-HISTFILE="${HOME}/.zsh_history"
-
-fpath=("${HOME}/.zsh/complete/src" ${fpath})
+fpath=("${HOME}/.zsh/complete/src" "${fpath[@]}")
 zle_highlight=("paste:none")
+
+export HISTFILE="${HOME}/.zsh_history"
+export HISTSIZE="4000"
+export SAVEHIST="${HISTSIZE}"
 
 export EDITOR="vim"
 export PAGER="less"
@@ -38,6 +39,7 @@ bindkey "^[[3~" delete-char
 
 autoload -Uz compinit && compinit
 zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
+setopt hist_ignore_all_dups
 
 source "${HOME}/.zsh/highlight/zsh-syntax-highlighting.zsh"
 source "${HOME}/.zsh/suggest/zsh-autosuggestions.zsh"

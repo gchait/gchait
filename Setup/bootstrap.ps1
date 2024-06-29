@@ -2,9 +2,9 @@ scoop update -a
 scoop bucket add extras *> ${null}
 
 scoop install `
-    eza fastfetch vim grep spotify jq yq vscode `
-    rufus just windows-terminal draw.io gron vlc `
-    ccleaner python kubectl helm wget zip ripgrep
+    eza fastfetch grep spotify jq yq vscode `
+    rufus just windows-terminal draw.io gron `
+    ccleaner python kubectl vim wget vlc zip
 
 reg import "${HOME}\scoop\apps\vscode\current\install-context.reg" *> ${null}
 reg import "${HOME}\scoop\apps\vscode\current\install-associations.reg" *> ${null}

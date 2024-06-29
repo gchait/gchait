@@ -1,10 +1,10 @@
 {
-  "window.menuBarVisibility": "toggle",
-  "extensions.ignoreRecommendations": true,
-
   "vs-kubernetes": {"vs-kubernetes.crd-code-completion": "disabled"},
   "[jinja-html]": {"editor.defaultFormatter": "vscode.html-language-features"},
   "redhat.telemetry.enabled": false,
+
+  "window.menuBarVisibility": "toggle",
+  "extensions.ignoreRecommendations": true,
 
   "git.autofetch": true,
   "git.enableSmartCommit": true,
