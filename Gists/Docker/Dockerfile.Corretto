@@ -1,6 +1,0 @@
-FROM amazoncorretto:21-alpine
-
-WORKDIR /app
-COPY ./build/libs/*-all.jar ./helloworld.jar
-
-CMD ["java", "-jar", "helloworld.jar"]
