@@ -1,6 +1,8 @@
 {
   "vs-kubernetes": {"vs-kubernetes.crd-code-completion": "disabled"},
   "[jinja-html]": {"editor.defaultFormatter": "vscode.html-language-features"},
+  "[terraform]": {"editor.defaultFormatter": "hashicorp.terraform"},
+  "[terraform-vars]": {"editor.defaultFormatter": "hashicorp.terraform"},
   "redhat.telemetry.enabled": false,
 
   "window.menuBarVisibility": "toggle",
